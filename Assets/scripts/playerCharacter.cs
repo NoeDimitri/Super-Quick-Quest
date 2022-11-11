@@ -11,7 +11,7 @@ public class playerCharacter : MonoBehaviour
     public int damage;
 
     [Header("Equipment")]
-    public weapons currentWeapon;
+    public weapon currentWeapon;
     public armor currentArmor;
 
     void Start()

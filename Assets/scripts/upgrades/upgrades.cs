@@ -8,9 +8,16 @@ public class upgrades : MonoBehaviour
     public string upgradeName;
     public string upgradeDescription;
 
+
 }
 
-public class buff : upgrades
+public class equipment : upgrades
+{
+
+
+}
+
+/*public class buff : upgrades
 {
 
 
@@ -20,16 +27,13 @@ public class buff : upgrades
 
 public class equipment : upgrades
 {
-    [Header("Equiptment Info")]
-    public string itemName;
-    public string itemDescription;
-    int experience;
+
 
 }
 
 public class weapons : equipment
 {
-    float damageModifer;
+    public float damageModifer;
 
 
 }
@@ -37,7 +41,7 @@ public class weapons : equipment
 public class armor : equipment
 {
 
-    float defense;
+    public float defense;
 
 
-}
+}*/

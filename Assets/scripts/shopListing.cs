@@ -13,6 +13,7 @@ public class shopListing : MonoBehaviour
 
     listingType shopType;
     public equipment currentItem;
+    public buff currentBuff;
 
     void Start()
     {
@@ -25,12 +26,27 @@ public class shopListing : MonoBehaviour
         
     }
 
-    void displayInfo()
+    public void displayInfo()
     {
+        if(isEquipment())
+        {
 
+            Title.text = currentItem.upgradeName;
+            Title.text = currentItem.upgradeDescription;
 
+        }
+
+        if(isBuff())
+        {
+
+            Title.text = currentBuff.upgradeName;
+            Title.text = currentBuff.upgradeDescription;
+
+        }
 
     }
+
+
     
 
     bool isEquipment()

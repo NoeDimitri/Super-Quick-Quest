@@ -6,8 +6,15 @@ public class shopScript : MonoBehaviour
 {
     public shopListing[] shopListings;
 
+    public equipment[] AllEquipment;
+    public buff[] allBuffs;
+
+    public void rerollShop()
+    {
 
 
+
+    }
 
 
 }

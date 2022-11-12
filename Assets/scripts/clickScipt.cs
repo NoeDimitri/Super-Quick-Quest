@@ -19,6 +19,7 @@ public class clickScipt : MonoBehaviour
                 {
                     shop.rerollShop();
                 }
+
                 if (hit.collider.gameObject.CompareTag("refresh"))
                 {
                     shop.rerollShop();

@@ -591,6 +591,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2187515925311499415, guid: 3855ca70a1b8af040b137c986d630810, type: 3}
   m_PrefabInstance: {fileID: 1409429395}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &292081499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292081500}
+  - component: {fileID: 292081501}
+  m_Layer: 0
+  m_Name: Spider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &292081500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292081499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1342361886}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292081501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292081499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  attack: 3
+  atkChargeMax: 0.5
+  defense: 0
+  attackMethod: {fileID: 0}
+  defendMethod: {fileID: 0}
+  description: 
+  monsterName: 
+  monsterSprite: {fileID: 0}
+  position: 0
 --- !u!1 &362321137
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +849,7 @@ RectTransform:
   m_Children:
   - {fileID: 1736949806}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -950,7 +1004,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 0}
   upgraded: 0
   damageMultiplier: 1
-  atkSpeedMultiplier: 1
+  attackSpeedGaugeMax: 0
 --- !u!1 &569211408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1263,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: e44e1399d4ea2cc4aa3a213ec210d601, type: 3}
   upgraded: 0
   damageMultiplier: 0
-  atkSpeedMultiplier: 0
+  attackSpeedGaugeMax: 0
 --- !u!1 &670840117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1742,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: 30bc47a174d183942a0ef1de8f7f3977, type: 3}
   upgraded: 0
   damageMultiplier: 0
-  atkSpeedMultiplier: 0
+  attackSpeedGaugeMax: 0
 --- !u!4 &929062830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2187515925311499415, guid: 3855ca70a1b8af040b137c986d630810, type: 3}
@@ -1778,7 +1832,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: 523712ff87b0d3d49bc32f167a8bce49, type: 3}
   upgraded: 0
   damageMultiplier: 0
-  atkSpeedMultiplier: 0
+  attackSpeedGaugeMax: 0
 --- !u!1 &1046132488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2381,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1342361885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342361886}
+  m_Layer: 0
+  m_Name: Monsters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342361886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342361885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.061735153, y: 0.0059171915, z: -1.0528933}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 292081500}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382772568
 GameObject:
   m_ObjectHideFlags: 0

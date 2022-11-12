@@ -4,34 +4,26 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class buff
+public class buff : upgrades
 {
-    [Header("Info")]
-    public string upgradeName;
-    public string upgradeDescription;
-    public Sprite upgradeSprite;
-    protected Color associatedColor;
-
+    [Header("generalBuff Info")]
     public string penalty;
-
-
     //Is this buff a super buff?
     public bool isSuperBuff;
-    static int superBuffRate = 4;
-
     //What we'll be multiplied by if we are super
     public float multiplier;
-    static float maxMult = 0.5f;
-    static float minMult = 0.15f;
-
-    //What we add/subtract 
     public int statDif;
-
     //Primary and secondary stats
     public playerCharacter.stats mainStat;
     public playerCharacter.stats secondaryStat;
 
-    static Dictionary<int, playerCharacter.stats> numToStat = new Dictionary<int, playerCharacter.stats>
+    [Header("Random Buff Rates")]
+    public int superBuffRate = 4;
+    public float maxMult = 0.5f;
+    public float minMult = 0.15f;
+
+
+    public Dictionary<int, playerCharacter.stats> numToStat = new Dictionary<int, playerCharacter.stats>
     {
         [0] = playerCharacter.stats.hp,
         [1] = playerCharacter.stats.atk,
@@ -39,7 +31,7 @@ public class buff
         [3] = playerCharacter.stats.def
     };
 
-    static Dictionary<playerCharacter.stats, string> statToString = new Dictionary<playerCharacter.stats, string>
+    public Dictionary<playerCharacter.stats, string> statToString = new Dictionary<playerCharacter.stats, string>
     {
         [playerCharacter.stats.hp] = "Health",
         [playerCharacter.stats.atk] = "Attack",
@@ -48,51 +40,42 @@ public class buff
 
     };
 
-    static Sprite[] spriteArray;
-
-    public Color returnUpgradeColor()
-    {
-        return associatedColor;
-    }
+    private Sprite[] spriteArray;
 
     private void Start()
     {
-        associatedColor = Color.grey;
+        generateRandomBuff();
     }
-    static void LoadSpritesWhenReady(AsyncOperationHandle<Sprite[]> handleToCheck)
+    private void LoadSpritesWhenReady(AsyncOperationHandle<Sprite[]> handleToCheck)
     {
         if (handleToCheck.Status == AsyncOperationStatus.Succeeded)
         {
             spriteArray = handleToCheck.Result;
         }
     }
-
-
     
-    public static buff generateRandomBuff()
+    //random shuffle this buffs stats
+    public void generateRandomBuff()
     {
-        buff newBuff = new buff();
-
-
         //Determine whether it is a suepr buff
         if (Random.Range(0, 101) <= superBuffRate)
         {
-            newBuff.isSuperBuff = true;
-            ColorUtility.TryParseHtmlString("#ff9933", out newBuff.associatedColor);
+            isSuperBuff = true;
+            ColorUtility.TryParseHtmlString("#ff9933", out associatedColor);
 
         }
         else
         {
-            newBuff.isSuperBuff = false;
-            ColorUtility.TryParseHtmlString("#817e7e", out newBuff.associatedColor);
+            isSuperBuff = false;
+            ColorUtility.TryParseHtmlString("#817e7e", out associatedColor);
 
         }
 
         //Multipler for purposes of super buff
-        newBuff.multiplier = 1 + Random.Range(minMult, maxMult);
+        multiplier = 1 + Random.Range(minMult, maxMult);
 
         //Calculating dif
-        newBuff.statDif = Random.Range(1, 4);
+        statDif = Random.Range(1, 4);
 
         
         int statChoice = Random.Range(0, 3);
@@ -103,27 +86,21 @@ public class buff
             statChoice2 = Random.Range(0, 3);
         }
 
-        newBuff.mainStat = numToStat[statChoice];
-        newBuff.secondaryStat = numToStat[statChoice2];
+        mainStat = numToStat[statChoice];
+        secondaryStat = numToStat[statChoice2];
+        upgradeName = statToString[mainStat] + " increase";
 
-        AsyncOperationHandle<Sprite[]> spriteHandle = Addressables.LoadAssetAsync<Sprite[]>("Assets/sprites/buffSymbol.png");
-        spriteHandle.Completed += LoadSpritesWhenReady;
-
-        newBuff.upgradeSprite = spriteArray[0];
-        newBuff.upgradeName = statToString[newBuff.mainStat] + " increase";
-
-        if (newBuff.isSuperBuff)
+        if (isSuperBuff)
         {
-            newBuff.penalty = "Decrease your " + statToString[newBuff.secondaryStat];
-            newBuff.upgradeDescription = string.Format("Multiply your {0}\n x {1:0.##}", statToString[newBuff.mainStat], newBuff.multiplier);
+            penalty = "Decrease your " + statToString[secondaryStat];
+            upgradeDescription = string.Format("Multiply your {0}\n x {1:0.##}", statToString[mainStat], multiplier);
 
         }
         else
         {
-            newBuff.upgradeDescription = "Increase your " + statToString[newBuff.mainStat] + "\n+" + newBuff.statDif;
+            penalty = "";
+            upgradeDescription = "Increase your " + statToString[mainStat] + "\n+" + statDif;
         }
-
-        return newBuff;
 
     }
     

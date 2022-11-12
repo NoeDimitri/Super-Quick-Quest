@@ -23,7 +23,6 @@ public class shopScript : MonoBehaviour
     {
         shopListings = GetComponentsInChildren<shopListing>();
         allWeapons = weaponHolder.GetComponentsInChildren<weapon>();
-        //allBuffs = buffHolder.GetComponentsInChildren<buff>();
         allArmors = armorHolder.GetComponentsInChildren<armor>();
 
         rerollShop();
@@ -34,16 +33,13 @@ public class shopScript : MonoBehaviour
     //Reroll the shop :))
     public void rerollShop()
     {
+        //reroll items in shop
         foreach(shopListing shop in shopListings)
         {
             shop.shopType = decideType();
-
             shop.currentArmor = allArmors[Random.Range(0, allArmors.Length)];
             shop.currentWeapon = allWeapons[Random.Range(0, allWeapons.Length)];
-            //shop.currentBuff = allBuffs[Random.Range(0, allBuffs.Length)];
-
-            shop.currentBuff = buff.generateRandomBuff();
-
+            shop.currentBuff.generateRandomBuff();
             shop.displayInfo();
         }
 

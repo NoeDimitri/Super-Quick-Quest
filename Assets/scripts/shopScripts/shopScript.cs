@@ -39,6 +39,8 @@ public class shopScript : MonoBehaviour
             shop.currentWeapon = allWeapons[Random.Range(0, allWeapons.Length)];
             shop.currentBuff = allBuffs[Random.Range(0, allBuffs.Length)];
 
+            //shop.currentBuff = buff.generateRandomBuff();
+
             shop.displayInfo();
         }
 

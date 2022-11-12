@@ -6,12 +6,13 @@ using TMPro;
 public class playerCharacter : MonoBehaviour
 {
     // Start is called before the first frame update
+    public enum stats {hp, atk, spd, def };
 
     [Header("Player Stats")]
     public int health;
     public int attack;
     public int defense;
-    public int speed;
+    public float speed;
 
     [Header("Equipment")]
     public weapon currentWeapon;

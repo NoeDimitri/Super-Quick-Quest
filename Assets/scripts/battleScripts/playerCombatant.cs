@@ -23,9 +23,9 @@ public class playerCombatant : combatant
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
 
-        foreach(combatant enemy in enemyContainer.GetComponentsInChildren<combatant>())
+        foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
         {
-            enemyList.Add(enemy);
+            enemyList.Add(enemy.GetComponent<combatant>());
         }
 
     }
@@ -42,7 +42,6 @@ public class playerCombatant : combatant
             attackMethod.performAttack(target);
 
             currentAtkCharge = 0;
-            particles.Play();
 
         }
 

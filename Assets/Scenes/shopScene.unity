@@ -3000,7 +3000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEncounter: {fileID: 159296221}
-  shoppingChar: {fileID: 0}
 --- !u!4 &1713244238
 Transform:
   m_ObjectHideFlags: 0
@@ -3059,7 +3058,7 @@ RectTransform:
   m_GameObject: {fileID: 1736949805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.854687, y: 4.1015625, z: 1}
+  m_LocalScale: {x: 2.90371, y: 2.1020508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1396725807}
@@ -3069,7 +3068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327, y: 402}
+  m_AnchoredPosition: {x: -156, y: 136}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1736949807
@@ -3136,8 +3135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decaySpeed: 0.02
-  currPlayerInfo: {fileID: 0}
-  player: {fileID: 0}
   maxTime: 60
 --- !u!1 &1778098458
 GameObject:

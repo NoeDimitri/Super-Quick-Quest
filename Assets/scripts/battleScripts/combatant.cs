@@ -15,7 +15,7 @@ public abstract class combatant : MonoBehaviour
     protected float currentAtkCharge;
 
     protected Slider slider;
-    protected ParticleSystem particles;
+    public ParticleSystem particles;
 
     [Header("Attacking/Defending")]
     public generalAttack attackMethod;
@@ -46,7 +46,6 @@ public abstract class combatant : MonoBehaviour
             attackMethod.performAttack(target);
 
             currentAtkCharge = 0;
-            particles.Play();
 
         }
 
@@ -57,7 +56,8 @@ public abstract class combatant : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        particles.Play();
+        if (health <= 0)
         {
             death();
         }

@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 351b3526e6ee98c429f94ec212181dee
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: f9e7ae93c712bbb49b428b33277ecb20
+    m_Address: Assets/sprites/buffSymbol.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 29910535c60e59d4ba043f8871d6ec91, type: 2}
   m_SchemaSet:

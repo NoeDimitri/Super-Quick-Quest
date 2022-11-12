@@ -586,6 +586,58 @@ MonoBehaviour:
   fadedColor: {r: 0.22745098, g: 0.22745098, b: 0.22745098, a: 1}
   activatedColor: {r: 0.99215686, g: 0.8509804, b: 0.24705882, a: 1}
   maxedColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &159296220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 159296222}
+  - component: {fileID: 159296221}
+  m_Layer: 0
+  m_Name: Encounter 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &159296221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159296220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fe0f352994f484193e89104545d886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsters:
+  - {fileID: 292081501}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
+  description: First encounter contains multiple spiders
+  tier: 1
+--- !u!4 &159296222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159296220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2075190085}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &221974905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2187515925311499415, guid: 3855ca70a1b8af040b137c986d630810, type: 3}
@@ -601,6 +653,8 @@ GameObject:
   m_Component:
   - component: {fileID: 292081500}
   - component: {fileID: 292081501}
+  - component: {fileID: 292081503}
+  - component: {fileID: 292081502}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -635,16 +689,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 30
   attack: 3
   atkChargeMax: 0.5
   defense: 0
-  attackMethod: {fileID: 0}
-  defendMethod: {fileID: 0}
-  description: 
-  monsterName: 
-  monsterSprite: {fileID: 0}
-  position: 0
+  attackMethod: {fileID: 292081503}
+  defendMethod: {fileID: 292081502}
+  description: The squirmy spider will take more damage from scythes and swords,
+    but is hard to hit and deals damage when it dies.
+  monsterName: Spider
+  monsterSprite: {fileID: 21300000, guid: 39558d3668ae12d448bd941c67c9f3df, type: 3}
+--- !u!114 &292081502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292081499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defender: {fileID: 0}
+--- !u!114 &292081503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292081499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacker: {fileID: 0}
 --- !u!1 &362321137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1925,7 @@ GameObject:
   - component: {fileID: 1046132489}
   m_Layer: 0
   m_Name: character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2889,6 +2969,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1713244236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713244238}
+  - component: {fileID: 1713244237}
+  - component: {fileID: 1713244239}
+  m_Layer: 0
+  m_Name: GameState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1713244237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713244236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f988499ed3bec4ca3c22a96a456c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currEncounter: {fileID: 159296221}
+  shoppingChar: {fileID: 0}
+--- !u!4 &1713244238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713244236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.372379, y: 0.980157, z: 553.4774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1713244239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713244236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5928b4b8ea235bc4eb76f5ab5076e6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  attack: 0
+  currWeapon: {fileID: 0}
+  currArmor: {fileID: 0}
 --- !u!1 &1736949805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +3136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decaySpeed: 0.02
+  currPlayerInfo: {fileID: 0}
+  player: {fileID: 0}
   maxTime: 60
 --- !u!1 &1778098458
 GameObject:
@@ -8284,6 +8429,38 @@ PolygonCollider2D:
       - {x: 0.31, y: -0.78}
       - {x: 0.34, y: -0.74}
       - {x: 0.42999998, y: -0.71}
+--- !u!1 &2075190084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2075190085}
+  m_Layer: 0
+  m_Name: Encounters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2075190085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075190084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.372379, y: 0.980157, z: 553.4774}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 159296222}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086008053
 GameObject:
   m_ObjectHideFlags: 0

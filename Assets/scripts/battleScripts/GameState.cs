@@ -8,13 +8,17 @@ public class GameState : MonoBehaviour
     public encounter currEncounter;
 
     private playerInfo currPlayerInfo;
-    private playerCharacter shoppingChar;
+    public playerCharacter shoppingChar;
+
+    public int currTier;
 
     // Start is called before the first frame update
     void Start()
     {
         currPlayerInfo = GetComponent<playerInfo>();
         shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
+        //if instance is null;
+        currTier = 1;
     }
 
     private void OnEnable()
@@ -33,3 +37,4 @@ public class GameState : MonoBehaviour
 
 
 }
+    

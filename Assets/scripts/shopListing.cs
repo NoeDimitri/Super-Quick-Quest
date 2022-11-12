@@ -7,56 +7,54 @@ using TMPro;
 public class shopListing : MonoBehaviour
 {
     // Start is called before the first frame update
-    enum listingType {statBuff, equipment};
+    public enum listingType {buff, armor, weapon};
+    private shopScript shop;
 
-    public TMP_Text Title, Description;
+    [Header("Info")]
+    public TMP_Text Title;
+    public TMP_Text Description;
+    public SpriteRenderer image;
+    private SpriteRenderer sprite;
 
-    listingType shopType;
-    public equipment currentItem;
+    [Space(10)]
+    public listingType shopType;
+    [Space(5)]
+
+    [Header("Current Upgrades")]
+    public weapon currentWeapon;
+    public armor currentArmor;
     public buff currentBuff;
 
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        sprite = GetComponent<SpriteRenderer>();
+        shop = GetComponentInParent<shopScript>();
     }
 
     public void displayInfo()
     {
-        if(isEquipment())
+        switch(shopType)
         {
+            case listingType.armor:
+                Title.text = currentArmor.upgradeName;
+                Description.text = currentArmor.upgradeDescription;
+                sprite.color = currentArmor.returnUpgradeColor();
+                break;
+            case listingType.weapon:
+                Title.text = currentWeapon.upgradeName;
+                Description.text = currentWeapon.upgradeDescription;
+                sprite.color = currentWeapon.returnUpgradeColor();
 
-            Title.text = currentItem.upgradeName;
-            Title.text = currentItem.upgradeDescription;
+                break;
+            case listingType.buff:
+                Title.text = currentBuff.upgradeName;
+                Description.text = currentBuff.upgradeDescription;
+                sprite.color = currentBuff.returnUpgradeColor();
+
+                break;
 
         }
-
-        if(isBuff())
-        {
-
-            Title.text = currentBuff.upgradeName;
-            Title.text = currentBuff.upgradeDescription;
-
-        }
-
     }
 
-
-    
-
-    bool isEquipment()
-    {
-        return shopType.Equals(listingType.equipment);
-    }
-
-    bool isBuff()
-    {
-        return shopType.Equals(listingType.statBuff);
-    }
 
 }

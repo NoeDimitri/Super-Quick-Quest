@@ -28,6 +28,13 @@ public class playerCharacter : MonoBehaviour
 
     }
 
+    public void resetLoot()
+    {
+
+
+
+    }
+
 
 
 

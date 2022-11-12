@@ -7,41 +7,19 @@ public class upgrades : MonoBehaviour
     [Header("Info")]
     public string upgradeName;
     public string upgradeDescription;
+    public Sprite upgradeSprite;
+    protected Color associatedColor;
 
 
-}
-
-public class equipment : upgrades
-{
-
-
-}
-
-/*public class buff : upgrades
-{
-
-
-
+    public Color returnUpgradeColor()
+    {
+        return associatedColor;
+    }
 
 }
 
 public class equipment : upgrades
 {
-
-
-}
-
-public class weapons : equipment
-{
-    public float damageModifer;
-
+    public int itemExperience;
 
 }
-
-public class armor : equipment
-{
-
-    public float defense;
-
-
-}*/

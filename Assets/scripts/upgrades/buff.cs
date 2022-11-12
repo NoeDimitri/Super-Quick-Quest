@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class buff : upgrades
 {
-
-
-
+    private void Start()
+    {
+        associatedColor = Color.grey;
+    }
 }

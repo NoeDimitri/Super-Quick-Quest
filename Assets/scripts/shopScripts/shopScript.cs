@@ -15,7 +15,7 @@ public class shopScript : MonoBehaviour
     public int equipChance;
 
     public weapon[] allWeapons;
-    public buff[] allBuffs;
+    //public buff[] allBuffs;
     public armor[] allArmors;
 
     //Initialize the lists
@@ -23,8 +23,11 @@ public class shopScript : MonoBehaviour
     {
         shopListings = GetComponentsInChildren<shopListing>();
         allWeapons = weaponHolder.GetComponentsInChildren<weapon>();
-        allBuffs = buffHolder.GetComponentsInChildren<buff>();
+        //allBuffs = buffHolder.GetComponentsInChildren<buff>();
         allArmors = armorHolder.GetComponentsInChildren<armor>();
+
+        rerollShop();
+
     }
 
 
@@ -37,9 +40,9 @@ public class shopScript : MonoBehaviour
 
             shop.currentArmor = allArmors[Random.Range(0, allArmors.Length)];
             shop.currentWeapon = allWeapons[Random.Range(0, allWeapons.Length)];
-            shop.currentBuff = allBuffs[Random.Range(0, allBuffs.Length)];
+            //shop.currentBuff = allBuffs[Random.Range(0, allBuffs.Length)];
 
-            //shop.currentBuff = buff.generateRandomBuff();
+            shop.currentBuff = buff.generateRandomBuff();
 
             shop.displayInfo();
         }

@@ -4,14 +4,20 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class buff : upgrades
+public class buff
 {
+    [Header("Info")]
+    public string upgradeName;
+    public string upgradeDescription;
+    public Sprite upgradeSprite;
+    protected Color associatedColor;
+
     public string penalty;
 
 
     //Is this buff a super buff?
     public bool isSuperBuff;
-    static int superBuffRate = 20;
+    static int superBuffRate = 4;
 
     //What we'll be multiplied by if we are super
     public float multiplier;
@@ -33,8 +39,21 @@ public class buff : upgrades
         [3] = playerCharacter.stats.def
     };
 
+    static Dictionary<playerCharacter.stats, string> statToString = new Dictionary<playerCharacter.stats, string>
+    {
+        [playerCharacter.stats.hp] = "Health",
+        [playerCharacter.stats.atk] = "Attack",
+        [playerCharacter.stats.spd] = "Speed",
+        [playerCharacter.stats.def] = "Defense"
+
+    };
+
     static Sprite[] spriteArray;
 
+    public Color returnUpgradeColor()
+    {
+        return associatedColor;
+    }
 
     private void Start()
     {
@@ -48,6 +67,8 @@ public class buff : upgrades
         }
     }
 
+
+    
     public static buff generateRandomBuff()
     {
         buff newBuff = new buff();
@@ -57,7 +78,7 @@ public class buff : upgrades
         if (Random.Range(0, 101) <= superBuffRate)
         {
             newBuff.isSuperBuff = true;
-            ColorUtility.TryParseHtmlString("#ff8000", out newBuff.associatedColor);
+            ColorUtility.TryParseHtmlString("#ff9933", out newBuff.associatedColor);
 
         }
         else
@@ -74,12 +95,12 @@ public class buff : upgrades
         newBuff.statDif = Random.Range(1, 4);
 
         
-        int statChoice = Random.Range(0, 4);
-        int statChoice2 = Random.Range(0, 4);
+        int statChoice = Random.Range(0, 3);
+        int statChoice2 = Random.Range(0, 3);
 
         while(statChoice2 == statChoice)
         {
-            statChoice2 = Random.Range(0, 4);
+            statChoice2 = Random.Range(0, 3);
         }
 
         newBuff.mainStat = numToStat[statChoice];
@@ -89,11 +110,22 @@ public class buff : upgrades
         spriteHandle.Completed += LoadSpritesWhenReady;
 
         newBuff.upgradeSprite = spriteArray[0];
-        newBuff.upgradeDescription = "test";
-        newBuff.upgradeName = "testName";
+        newBuff.upgradeName = statToString[newBuff.mainStat] + " increase";
+
+        if (newBuff.isSuperBuff)
+        {
+            newBuff.penalty = "Decrease your " + statToString[newBuff.secondaryStat];
+            newBuff.upgradeDescription = string.Format("Multiply your {0}\n x {1:0.##}", statToString[newBuff.mainStat], newBuff.multiplier);
+
+        }
+        else
+        {
+            newBuff.upgradeDescription = "Increase your " + statToString[newBuff.mainStat] + "\n+" + newBuff.statDif;
+        }
 
         return newBuff;
 
     }
+    
 
 }

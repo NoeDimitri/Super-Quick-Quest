@@ -10,6 +10,8 @@ public class GameState : MonoBehaviour
     private playerInfo currPlayerInfo;
     public playerCharacter shoppingChar;
 
+    public int currTier;
+
     void saveCharacter()
     {
         currPlayerInfo.clone(shoppingChar);
@@ -22,6 +24,8 @@ public class GameState : MonoBehaviour
     {
         currPlayerInfo = GetComponent<playerInfo>();
         shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
+        //if instance is null;
+        currTier = 1;
     }
 
     // Update is called once per frame
@@ -30,3 +34,4 @@ public class GameState : MonoBehaviour
         
     }
 }
+    

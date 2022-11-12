@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class encounter : MonoBehaviour
+public class monsterMenu : MonoBehaviour
 {
 
-    public monsterInfo[] monsters;
+    public TMP_Text enemyName;
+    public TMP_Text enemyDescription;
+    public Image enemyImage;
+    public Slider enemyHealth;
+    public Slider enemyAttack;
 
-    public int tier;
 
 
     // Start is called before the first frame update

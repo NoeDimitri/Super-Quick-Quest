@@ -18,7 +18,7 @@ public class buff : upgrades
     public playerCharacter.stats secondaryStat;
 
     [Header("Random Buff Rates")]
-    public int superBuffRate = 4;
+    public int superBuffRate = 3;
     public float maxMult = 0.5f;
     public float minMult = 0.15f;
 

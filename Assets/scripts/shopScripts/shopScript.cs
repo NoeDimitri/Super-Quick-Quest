@@ -6,12 +6,16 @@ public class shopScript : MonoBehaviour
 {
     public shopListing[] shopListings;
 
-
     [Header("Upgrades")]
     public GameObject weaponHolder;
     public GameObject buffHolder;
     public GameObject armorHolder;
 
+    [Header("Time related info")]
+    public shopTimer timer;
+    public float timeLoss = 2.0f;
+
+    [Header("Probabilities")]
     public int equipChance;
 
     public weapon[] allWeapons;
@@ -29,7 +33,13 @@ public class shopScript : MonoBehaviour
 
     }
 
+    public void loseTime()
+    {
+        timer.decrementTime(timeLoss);
+        timer.playParticles();
 
+
+    }
     //Reroll the shop :))
     public void rerollShop()
     {

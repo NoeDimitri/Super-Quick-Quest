@@ -57,7 +57,7 @@ public class playerCharacter : MonoBehaviour
         weaponText.text = currentWeapon.upgradeName;
         weaponImage.sprite = currentWeapon.upgradeSprite;
         armorText.text = currentArmor.upgradeName;
-        //armorImage.sprite = currentArmor.upgradeSprite;
+        armorImage.sprite = currentArmor.upgradeSprite;
 
 
     }
@@ -113,7 +113,7 @@ public class playerCharacter : MonoBehaviour
             case stats.atk:
                 if (newBuff.isSuperBuff)
                 {
-                    attack = Mathf.FloorToInt(attack * newBuff.multiplier);
+                    attack = Mathf.CeilToInt(attack * newBuff.multiplier);
                    
                 }
                 else
@@ -125,7 +125,7 @@ public class playerCharacter : MonoBehaviour
             case stats.hp:
                 if (newBuff.isSuperBuff)
                 {
-                    health = Mathf.FloorToInt(health * newBuff.multiplier);
+                    health = Mathf.CeilToInt(health * newBuff.multiplier);
 
                 }
                 else
@@ -137,7 +137,7 @@ public class playerCharacter : MonoBehaviour
             case stats.spd:
                 if (newBuff.isSuperBuff)
                 {
-                    speed = Mathf.FloorToInt(speed * newBuff.multiplier);
+                    speed = Mathf.CeilToInt(speed * newBuff.multiplier);
 
                 }
                 else

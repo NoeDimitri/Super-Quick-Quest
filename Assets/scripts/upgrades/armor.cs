@@ -17,9 +17,7 @@ public class armor : equipment
         upgradeDescription = newArmor.upgradeDescription;
         upgradeSprite = newArmor.upgradeSprite;
         associatedColor = newArmor.associatedColor;
-
         itemExperience = 1;
-
         upgraded = false;
 
     }

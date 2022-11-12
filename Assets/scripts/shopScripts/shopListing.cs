@@ -42,6 +42,8 @@ public class shopListing : MonoBehaviour
                 Title.text = currentArmor.upgradeName;
                 Description.text = currentArmor.upgradeDescription;
                 listingColor.color = currentArmor.returnUpgradeColor();
+                itemSprite.sprite = currentArmor.upgradeSprite;
+
                 penalty.text = "";
                 break;
             case listingType.weapon:
@@ -84,6 +86,7 @@ public class shopListing : MonoBehaviour
 
         }
 
+        shop.loseTime();
         shop.rerollShop();
         displayInfo();
     }

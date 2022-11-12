@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class generalDefend : MonoBehaviour
 {
+    [HideInInspector]
     public combatant defender;
     private void Start()
     {

@@ -59,9 +59,7 @@ public abstract class combatant : MonoBehaviour
         health -= damage;
         if(health <= 0)
         {
-
-            Debug.Log("oh boy I died");
-
+            death();
         }
 
 
@@ -74,5 +72,6 @@ public abstract class combatant : MonoBehaviour
 
     }
 
+    protected abstract void death();
 
 }

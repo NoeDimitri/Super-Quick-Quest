@@ -75,7 +75,11 @@ public class shopListing : MonoBehaviour
   
                 break;
             case listingType.buff:
-
+                player.applyBuffs(currentBuff);
+                if(currentBuff.isSuperBuff)
+                {
+                    player.applyDebuffs(currentBuff);
+                }
                 break;
 
         }

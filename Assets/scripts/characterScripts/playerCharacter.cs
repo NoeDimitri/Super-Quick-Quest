@@ -8,6 +8,7 @@ public class playerCharacter : MonoBehaviour
     // Start is called before the first frame update
     public enum stats {hp, atk, spd, def };
 
+
     [Header("Player Stats")]
     public int health;
     public int attack;
@@ -104,6 +105,73 @@ public class playerCharacter : MonoBehaviour
 
         refreshStats();
     }
+
+    public void applyBuffs(buff newBuff)
+    {
+        switch(newBuff.mainStat)
+        {
+            case stats.atk:
+                if (newBuff.isSuperBuff)
+                {
+                    attack = Mathf.FloorToInt(attack * newBuff.multiplier);
+                   
+                }
+                else
+                {
+                    attack += newBuff.statDif;
+                }
+                break;
+
+            case stats.hp:
+                if (newBuff.isSuperBuff)
+                {
+                    health = Mathf.FloorToInt(health * newBuff.multiplier);
+
+                }
+                else
+                {
+                    health += newBuff.statDif;
+                }
+                break;
+
+            case stats.spd:
+                if (newBuff.isSuperBuff)
+                {
+                    speed = Mathf.FloorToInt(speed * newBuff.multiplier);
+
+                }
+                else
+                {
+                    speed += newBuff.statDif;
+                }
+                break;
+
+        }
+
+        refreshStats();
+    }
+
+    public void applyDebuffs(buff newBuff)
+    {
+        switch (newBuff.secondaryStat)
+        {
+            case stats.atk:
+                attack = Mathf.Max(1, attack - newBuff.statDif);
+                break;
+
+            case stats.hp:
+                health = Mathf.Max(1, health - newBuff.statDif);
+                break;
+
+            case stats.spd:
+                speed = Mathf.Max(1, speed - newBuff.statDif);
+                break;
+
+        }
+
+        refreshStats();
+    }
+
 
 }
 

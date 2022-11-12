@@ -6,6 +6,7 @@ TagManager:
   tags:
   - shopListing
   - refresh
+  - player
   layers:
   - Default
   - TransparentFX

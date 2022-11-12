@@ -1,21 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
-public class combatant : MonoBehaviour
+public abstract class combatant : MonoBehaviour
 {
     [Header("Stats")]
     public int health;
     public int attack;
-    public float atkSpeedGaugeMax;
-    public float defense;
+    public float atkChargeMax;
+    public int defense;
 
-    [Header("Temp Modifiers")]
-    public float healthModifier;
-    public float attackModifier;
-    public float speedModifier;
-    public float defenseModifier;
+    protected float currentAtkCharge;
 
+    protected Slider slider;
+    protected ParticleSystem particles;
+
+    [Header("Attacking/Defending")]
+    public generalAttack attackMethod;
+    public generalDefend defendMethod;
+    public combatant target;
+
+    [Header("Stat Display")]
+    public TMP_Text healthText;
+    public TMP_Text attackText;
+
+
+    private void Start()
+    {
+        currentAtkCharge = 0;
+        slider = GetComponentInChildren<Slider>();
+        particles = GetComponentInChildren<ParticleSystem>();
+
+    }
+
+    private void Update()
+    {
+
+        currentAtkCharge += Time.deltaTime;
+        slider.value =Mathf.Min( currentAtkCharge / atkChargeMax, 1);
+        if(currentAtkCharge >= atkChargeMax)
+        {
+
+            attackMethod.performAttack(target);
+
+            currentAtkCharge = 0;
+            particles.Play();
+
+        }
+
+        updateStats();
+
+    }
+
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+
+            Debug.Log("oh boy I died");
+
+        }
+
+
+    }
+
+    public void updateStats()
+    {
+        healthText.text = health.ToString();
+        attackText.text = attack.ToString();
+
+    }
 
 
 }

@@ -10,9 +10,6 @@ public class shopTimer : MonoBehaviour
     public float decaySpeed = 0.02f;
     private ParticleSystem particles;
 
-    public playerInfo currPlayerInfo;
-    public playerCharacter player;
-
     public float maxTime;
     private float timeRemaining;
 
@@ -35,7 +32,7 @@ public class shopTimer : MonoBehaviour
 
         if(timeRemaining <= 0)
         {
-            currPlayerInfo.clone(player);
+
         }
 
     }

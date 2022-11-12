@@ -15,8 +15,9 @@ public class shopListing : MonoBehaviour
     [Header("Info")]
     public TMP_Text Title;
     public TMP_Text Description;
-    public SpriteRenderer image;
-    private SpriteRenderer sprite;
+    public TMP_Text penalty;
+    public SpriteRenderer itemSprite;
+    private SpriteRenderer listingColor;
 
     [Space(10)]
     public listingType shopType;
@@ -29,7 +30,7 @@ public class shopListing : MonoBehaviour
 
     void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
+        listingColor = GetComponent<SpriteRenderer>();
         shop = GetComponentInParent<shopScript>();
     }
 
@@ -40,19 +41,22 @@ public class shopListing : MonoBehaviour
             case listingType.armor:
                 Title.text = currentArmor.upgradeName;
                 Description.text = currentArmor.upgradeDescription;
-                sprite.color = currentArmor.returnUpgradeColor();
+                listingColor.color = currentArmor.returnUpgradeColor();
+                penalty.text = "";
                 break;
             case listingType.weapon:
                 Title.text = currentWeapon.upgradeName;
                 Description.text = currentWeapon.upgradeDescription;
-                sprite.color = currentWeapon.returnUpgradeColor();
-
+                listingColor.color = currentWeapon.returnUpgradeColor();
+                itemSprite.sprite = currentWeapon.upgradeSprite;
+                penalty.text = "";
                 break;
             case listingType.buff:
                 Title.text = currentBuff.upgradeName;
                 Description.text = currentBuff.upgradeDescription;
-                sprite.color = currentBuff.returnUpgradeColor();
-
+                listingColor.color = currentBuff.returnUpgradeColor();
+                itemSprite.sprite = currentBuff.upgradeSprite;
+                penalty.text = currentBuff.penalty;
                 break;
 
         }

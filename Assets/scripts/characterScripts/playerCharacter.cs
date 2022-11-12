@@ -53,7 +53,10 @@ public class playerCharacter : MonoBehaviour
         spdText.text = "Speed: " + speed;
 
         weaponText.text = currentWeapon.upgradeName;
+        weaponImage.sprite = currentWeapon.upgradeSprite;
         armorText.text = currentArmor.upgradeName;
+        //armorImage.sprite = currentArmor.upgradeSprite;
+
 
     }
 

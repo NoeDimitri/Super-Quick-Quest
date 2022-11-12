@@ -20,7 +20,6 @@ public class weapon : equipment
         upgradeDescription = newWeapon.upgradeDescription;
         upgradeSprite = newWeapon.upgradeSprite;
         associatedColor = newWeapon.associatedColor;
-
         damageMultiplier = newWeapon.damageMultiplier;
         atkSpeedMultiplier = newWeapon.atkSpeedMultiplier;
 

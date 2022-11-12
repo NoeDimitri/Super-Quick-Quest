@@ -7,7 +7,7 @@ public class levelPips : MonoBehaviour
     int level = 0;
     public SpriteRenderer[] pips;
 
-    public Color fadedColor, activatedColor;
+    public Color fadedColor, activatedColor, maxedColor;
 
     void Start()
     {

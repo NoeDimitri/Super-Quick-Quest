@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class shopTimer : MonoBehaviour
 {
+    public delegate void timerFinish();
+    public static event timerFinish timerFinished;
 
     private Slider slider;
     public float decaySpeed = 0.02f;
@@ -32,6 +34,10 @@ public class shopTimer : MonoBehaviour
 
         if(timeRemaining <= 0)
         {
+            if(timerFinished != null)
+            {
+                timerFinished();
+            }
 
         }
 

@@ -8,14 +8,7 @@ public class GameState : MonoBehaviour
     public encounter currEncounter;
 
     private playerInfo currPlayerInfo;
-    public playerCharacter shoppingChar;
-
-    void saveCharacter()
-    {
-        currPlayerInfo.clone(shoppingChar);
-    }
-
-
+    private playerCharacter shoppingChar;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +17,19 @@ public class GameState : MonoBehaviour
         shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        shopTimer.timerFinished += saveCharacter;
     }
+    private void OnDisable()
+    {
+        shopTimer.timerFinished -= saveCharacter;
+    }
+
+    void saveCharacter()
+    {
+        currPlayerInfo.clone(shoppingChar);
+    }
+
+
 }

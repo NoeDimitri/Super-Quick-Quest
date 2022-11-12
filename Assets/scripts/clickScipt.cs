@@ -17,7 +17,7 @@ public class clickScipt : MonoBehaviour
             {
                 if(hit.collider.gameObject.CompareTag("shopListing"))
                 {
-                    shop.rerollShop();
+                    hit.collider.gameObject.GetComponent<shopListing>().selectListing();
                 }
 
                 if (hit.collider.gameObject.CompareTag("refresh"))

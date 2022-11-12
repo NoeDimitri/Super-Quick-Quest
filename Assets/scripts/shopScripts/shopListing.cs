@@ -9,6 +9,8 @@ public class shopListing : MonoBehaviour
     // Start is called before the first frame update
     public enum listingType {buff, armor, weapon};
     private shopScript shop;
+    [SerializeField]
+    private playerCharacter player;
 
     [Header("Info")]
     public TMP_Text Title;
@@ -54,6 +56,28 @@ public class shopListing : MonoBehaviour
                 break;
 
         }
+    }
+
+    public void selectListing()
+    {
+
+        switch (shopType)
+        {
+            case listingType.armor:
+                player.equipArmor(currentArmor);
+                break;
+            case listingType.weapon:
+                player.equipWeapon(currentWeapon);
+  
+                break;
+            case listingType.buff:
+
+                break;
+
+        }
+
+        shop.rerollShop();
+        displayInfo();
     }
 
 

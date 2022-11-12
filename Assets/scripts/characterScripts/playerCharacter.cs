@@ -10,6 +10,7 @@ public class playerCharacter : MonoBehaviour
     [Header("Player Stats")]
     public int health;
     public int attack;
+    public int defense;
     public int speed;
 
     [Header("Equipment")]
@@ -26,10 +27,11 @@ public class playerCharacter : MonoBehaviour
     public SpriteRenderer weaponImage;
     public SpriteRenderer armorImage;
 
+    public levelPips weaponPip;
+    public levelPips armorPip;
 
     void Start()
     {
-        refreshStats();
         Color weaponColor, armorColor;
         ColorUtility.TryParseHtmlString("#FF6347", out weaponColor);
         ColorUtility.TryParseHtmlString("#1E90FF", out armorColor);
@@ -37,20 +39,15 @@ public class playerCharacter : MonoBehaviour
         weaponText.color = weaponColor;
         armorText.color = armorColor;
 
-    }
+        currentWeapon = GetComponentInChildren<weapon>();
+        currentArmor = GetComponentInChildren<armor>();
 
-    // Update is called once per frame
-
-
-    public void resetEquipment()
-    {
-
-
-
+        refreshStats();
     }
 
     public void refreshStats()
     {
+
         healthText.text = "Health: " + health;
         atkText.text = "Attack: " + attack;
         spdText.text = "Speed: " + speed;
@@ -60,7 +57,49 @@ public class playerCharacter : MonoBehaviour
 
     }
 
+    public void equipWeapon(weapon newWeapon)
+    {
 
+        if(currentWeapon.upgradeName == newWeapon.upgradeName)
+        {
+
+            currentWeapon.increaseLevel();
+            weaponPip.updatePips(currentWeapon.getLevel());
+
+        }
+
+        else
+        {
+
+            currentWeapon.clone(newWeapon);
+            weaponPip.updatePips(currentWeapon.getLevel());
+
+        }
+
+        refreshStats();
+    }
+
+    public void equipArmor(armor newArmor)
+    {
+
+        if (currentArmor.upgradeName == newArmor.upgradeName)
+        {
+            //upgrade current item
+            currentArmor.increaseLevel();
+            armorPip.updatePips(currentArmor.getLevel());
+
+        }
+
+        else
+        {
+            //Copy over armor
+            currentArmor.clone(newArmor);
+            armorPip.updatePips(currentArmor.getLevel());
+
+        }
+
+        refreshStats();
+    }
 
 }
 

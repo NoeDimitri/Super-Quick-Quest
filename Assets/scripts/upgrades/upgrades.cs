@@ -20,6 +20,22 @@ public class upgrades : MonoBehaviour
 
 public class equipment : upgrades
 {
-    public int itemExperience;
+    protected int itemExperience = 1;
+    public bool upgraded = false;
+
+    public void increaseLevel()
+    {
+        itemExperience++;
+        if(itemExperience >= 3)
+        {
+            upgraded = true;
+            Debug.Log("Fully leveled");
+        }
+    }
+
+    public int getLevel()
+    {
+        return itemExperience;
+    }
 
 }

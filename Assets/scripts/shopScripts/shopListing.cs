@@ -39,29 +39,29 @@ public class shopListing : MonoBehaviour
         switch(shopType)
         {
             case listingType.armor:
-                Title.text = currentArmor.upgradeName;
-                Description.text = currentArmor.upgradeDescription;
-                listingColor.color = currentArmor.returnUpgradeColor();
-                itemSprite.sprite = currentArmor.upgradeSprite;
+                displayInfoHelper(currentArmor);
 
-                penalty.text = "";
                 break;
             case listingType.weapon:
-                Title.text = currentWeapon.upgradeName;
-                Description.text = currentWeapon.upgradeDescription;
-                listingColor.color = currentWeapon.returnUpgradeColor();
-                itemSprite.sprite = currentWeapon.upgradeSprite;
-                penalty.text = "";
+                displayInfoHelper(currentWeapon);
+
                 break;
             case listingType.buff:
-                Title.text = currentBuff.upgradeName;
-                Description.text = currentBuff.upgradeDescription;
-                listingColor.color = currentBuff.returnUpgradeColor();
-                itemSprite.sprite = currentBuff.upgradeSprite;
-                penalty.text = currentBuff.penalty;
+                displayInfoHelper(currentBuff);
                 break;
 
         }
+    }
+
+    private void displayInfoHelper(upgrades newUpgrade)
+    {
+
+        Title.text = newUpgrade.upgradeName;
+        Description.text = newUpgrade.upgradeDescription;
+        listingColor.color = newUpgrade.returnUpgradeColor();
+        itemSprite.sprite = newUpgrade.upgradeSprite;
+        penalty.text = newUpgrade.penalty;
+
     }
 
     public void selectListing()

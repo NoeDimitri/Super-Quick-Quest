@@ -5,7 +5,7 @@ using UnityEngine;
 public class weapon : equipment
 {
     public float damageMultiplier;
-    public float atkSpeedMultiplier;
+    public float attackSpeedGaugeMax;
     private void Start()
     {
         ColorUtility.TryParseHtmlString("#FF6347", out associatedColor);
@@ -21,7 +21,7 @@ public class weapon : equipment
         upgradeSprite = newWeapon.upgradeSprite;
         associatedColor = newWeapon.associatedColor;
         damageMultiplier = newWeapon.damageMultiplier;
-        atkSpeedMultiplier = newWeapon.atkSpeedMultiplier;
+        attackSpeedGaugeMax = newWeapon.attackSpeedGaugeMax;
 
         itemExperience = 1;
 

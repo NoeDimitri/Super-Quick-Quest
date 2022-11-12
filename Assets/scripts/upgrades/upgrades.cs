@@ -5,6 +5,7 @@ using UnityEngine;
 public class upgrades : MonoBehaviour
 {
     [Header("Info")]
+    public string penalty;
     public string upgradeName;
     public string upgradeDescription;
     public Sprite upgradeSprite;

@@ -7,7 +7,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class buff : upgrades
 {
     [Header("generalBuff Info")]
-    public string penalty;
     //Is this buff a super buff?
     public bool isSuperBuff;
     //What we'll be multiplied by if we are super

@@ -41,8 +41,11 @@ public class playerCharacter : MonoBehaviour
         weaponText.color = weaponColor;
         armorText.color = armorColor;
 
-        health = GameState.Instance.currPlayerInfo.health;
-        attack = GameState.Instance.currPlayerInfo.attack;
+        if(!GameState.Instance.testingMode)
+        {
+            health = GameState.Instance.currPlayerInfo.health;
+            attack = GameState.Instance.currPlayerInfo.attack;
+        }
 
         currentWeapon = GetComponentInChildren<weapon>();
         currentArmor = GetComponentInChildren<armor>();

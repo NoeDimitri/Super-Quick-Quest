@@ -69,6 +69,7 @@ public class sceneManager : MonoBehaviour
 
     void loadBattleScene()
     {
+
         GameState.Instance.savedObjects.Add(shopPlayer.currentArmor.gameObject);
         shopPlayer.currentArmor.gameObject.transform.SetParent(null);
         DontDestroyOnLoad(shopPlayer.currentArmor);

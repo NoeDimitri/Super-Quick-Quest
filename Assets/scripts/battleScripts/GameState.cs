@@ -26,6 +26,7 @@ public class GameState : MonoBehaviour
         //For testing, loads in random stuff
         if(testingMode)
         {
+            Debug.Log("test: " + shoppingChar.health);
             saveCharacter();
             currPlayerInfo.displayInfo();
 

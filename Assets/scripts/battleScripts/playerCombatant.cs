@@ -12,6 +12,9 @@ public class playerCombatant : combatant
     public delegate void gameOverFunctions();
     public static event gameOverFunctions gameOver;
 
+    public delegate void playerHitFunctions();
+    public static event playerHitFunctions playerHit;
+
     public weapon equippedWeapon;
     public armor equippedArmor;
 

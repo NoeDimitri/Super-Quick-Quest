@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4270114432562813440}
   - component: {fileID: 2219590748021983712}
   - component: {fileID: 3062815148916108716}
+  - component: {fileID: 2098561755785701124}
   m_Layer: 5
   m_Name: playerSprite
   m_TagString: Untagged
@@ -73,6 +74,26 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!95 &2098561755785701124
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655921803055997294}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 465affb36aafe7b4aacf6d28c6905a52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3667779385088517590
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,6 +5484,7 @@ MonoBehaviour:
   attackText: {fileID: 3667779385508045226}
   equippedWeapon: {fileID: 0}
   equippedArmor: {fileID: 0}
+  damageText: {fileID: 0}
   enemyList: []
   enemiesDefeated: 0
   battleInitialized: 0

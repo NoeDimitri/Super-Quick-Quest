@@ -365,6 +365,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f9642f39216004488a00b91ee08109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currEncounters:
+  - {fileID: 159296223}
+  - {fileID: 573618992}
+  - {fileID: 425206765}
   currEncounter: {fileID: 999778361}
   currMonstersDisplay:
   - {fileID: 1758014519}
@@ -1086,6 +1090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 159296222}
+  - component: {fileID: 159296223}
   m_Layer: 0
   m_Name: encounterTier1
   m_TagString: Untagged
@@ -1110,6 +1115,21 @@ Transform:
   m_Father: {fileID: 2075190085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159296223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159296220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10309f60cb494f647b46f70160401870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  encounterPool:
+  - {fileID: 999778361}
+  - {fileID: 2058322938}
 --- !u!4 &221974905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2187515925311499415, guid: 3855ca70a1b8af040b137c986d630810, type: 3}
@@ -1336,7 +1356,7 @@ MonoBehaviour:
   description: The squirmy spider will take more damage from scythes and swords,
     but is hard to hit and deals damage when it dies.
   monsterName: Spider
-  monsterSprite: {fileID: 21300000, guid: 39558d3668ae12d448bd941c67c9f3df, type: 3}
+  monsterSprite: {fileID: 21300000, guid: 341af2cff8c51eb4d91899c5f2cbb50a, type: 3}
 --- !u!114 &292081502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,7 +1827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fe0f352994f484193e89104545d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsters: []
+  monsters:
+  - {fileID: 1949795187}
+  - {fileID: 1949795187}
   tier: 3
 --- !u!1 &425206763
 GameObject:
@@ -1818,6 +1840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425206764}
+  - component: {fileID: 425206765}
   m_Layer: 0
   m_Name: encounterTier3
   m_TagString: Untagged
@@ -1842,6 +1865,21 @@ Transform:
   m_Father: {fileID: 2075190085}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &425206765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425206763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10309f60cb494f647b46f70160401870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  encounterPool:
+  - {fileID: 1232237140}
+  - {fileID: 396683765}
 --- !u!1 &426823492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573618991}
+  - component: {fileID: 573618992}
   m_Layer: 0
   m_Name: encounterTier2
   m_TagString: Untagged
@@ -2836,6 +2875,21 @@ Transform:
   m_Father: {fileID: 2075190085}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573618992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573618990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10309f60cb494f647b46f70160401870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  encounterPool:
+  - {fileID: 2022356625}
+  - {fileID: 1221670169}
 --- !u!1 &580494258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3537,86 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &746631188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746631189}
+  - component: {fileID: 746631192}
+  - component: {fileID: 746631191}
+  - component: {fileID: 746631190}
+  m_Layer: 0
+  m_Name: Skeleton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746631189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746631188}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000024199486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1342361886}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746631190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746631188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &746631191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746631188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &746631192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746631188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  attack: 10
+  atkChargeMax: 3
+  defense: 0
+  attackMethod: {fileID: 746631191}
+  defendMethod: {fileID: 746631190}
+  description: The skeleton is slow but he is a very scary fellow that can reduce
+    your attack.
+  monsterName: Skeleton
+  monsterSprite: {fileID: 21300000, guid: 6802746815980664b94b0a7abfd4997a, type: 3}
 --- !u!1 &822763396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,7 +4273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907328018
 GameObject:
@@ -5100,8 +5234,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsters:
-  - {fileID: 292081501}
-  - {fileID: 292081501}
   - {fileID: 292081501}
   - {fileID: 292081501}
   - {fileID: 292081501}
@@ -6122,7 +6254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fe0f352994f484193e89104545d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsters: []
+  monsters:
+  - {fileID: 746631192}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
   tier: 2
 --- !u!1 &1232237138
 GameObject:
@@ -6168,7 +6304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fe0f352994f484193e89104545d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsters: []
+  monsters:
+  - {fileID: 1949795187}
+  - {fileID: 746631192}
+  - {fileID: 746631192}
+  - {fileID: 292081501}
+  - {fileID: 292081501}
   tier: 3
 --- !u!1 &1254195122
 GameObject:
@@ -6754,6 +6895,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 292081500}
+  - {fileID: 746631189}
+  - {fileID: 1949795184}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14870,6 +15013,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948387931}
   m_CullTransparentMesh: 1
+--- !u!1 &1949795183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1949795184}
+  - component: {fileID: 1949795187}
+  - component: {fileID: 1949795186}
+  - component: {fileID: 1949795185}
+  m_Layer: 0
+  m_Name: MAOI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1949795184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949795183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000024199486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1342361886}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1949795185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949795183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949795186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949795183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949795187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949795183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 80
+  attack: 9999
+  atkChargeMax: 30
+  defense: 0
+  attackMethod: {fileID: 1949795186}
+  defendMethod: {fileID: 1949795185}
+  description: Don't let him charge up his massive attack!
+  monsterName: MAOI
+  monsterSprite: {fileID: 21300000, guid: f3e9417e5619d12428b0b7074596a943, type: 3}
 --- !u!1001 &1991228525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15056,7 +15278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fe0f352994f484193e89104545d886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsters: []
+  monsters:
+  - {fileID: 746631192}
+  - {fileID: 746631192}
+  - {fileID: 292081501}
   tier: 2
 --- !u!1 &2058322936
 GameObject:

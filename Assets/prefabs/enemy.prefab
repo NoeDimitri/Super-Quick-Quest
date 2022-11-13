@@ -4940,9 +4940,9 @@ MonoBehaviour:
   target: {fileID: 0}
   healthText: {fileID: 767427199792181861}
   attackText: {fileID: 767427199220504088}
+  floatingText: {fileID: 733354946189752298, guid: 6568259ae0e952349983f5d47dc8655d, type: 3}
   enemySprite: {fileID: 0}
   monsterImage: {fileID: 3844859147489603543}
-  damageText: {fileID: 733354946189752298, guid: 6568259ae0e952349983f5d47dc8655d, type: 3}
 --- !u!114 &767427199161357650
 MonoBehaviour:
   m_ObjectHideFlags: 0

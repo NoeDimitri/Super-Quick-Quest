@@ -609,6 +609,7 @@ MonoBehaviour:
   isSuperBuff: 0
   multiplier: 1
   statDif: 1
+  maxStatGain: 2
   mainStat: 0
   secondaryStat: 0
   superBuffRate: 3

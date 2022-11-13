@@ -12,6 +12,8 @@ public class buff : upgrades
     //What we'll be multiplied by if we are super
     public float multiplier;
     public int statDif;
+    public int maxStatGain;
+
     //Primary and secondary stats
     public playerCharacter.stats mainStat;
     public playerCharacter.stats secondaryStat;
@@ -70,7 +72,7 @@ public class buff : upgrades
         multiplier = 1 + Random.Range(minMult, maxMult);
 
         //Calculating dif
-        statDif = Random.Range(1, 4);
+        statDif = Random.Range(1, maxStatGain + 1);
 
         
         int statChoice = Random.Range(0, 2);

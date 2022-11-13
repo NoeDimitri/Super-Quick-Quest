@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7305097026667575497
+--- !u!1 &4446842041572653991
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,62 +8,63 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7305097026667575498}
-  - component: {fileID: 7305097026667575499}
-  - component: {fileID: 1837039911331732262}
+  - component: {fileID: 4446842041572653990}
+  - component: {fileID: 4446842041572653989}
+  - component: {fileID: 4446842041572653988}
   m_Layer: 0
-  m_Name: chibi knight
-  m_TagString: Untagged
+  m_Name: bloodBlade
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7305097026667575498
+--- !u!4 &4446842041572653990
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
+  m_GameObject: {fileID: 4446842041572653991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -16.12, y: -10.99, z: 0.018676639}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7305097026667575499
+--- !u!114 &4446842041572653989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
+  m_GameObject: {fileID: 4446842041572653991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97bb6c28dd4b20a49b2f46e07bd62ed8, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c0cd6473d85ad04f845e60c7ecfaca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   penalty: 
-  upgradeName: Chibi Knight
-  upgradeDescription: Blocks damage by a flat amount!
-  upgradeSprite: {fileID: 21300000, guid: ff253d400597f804a8ffdb0f67cf83ea, type: 3}
+  upgradeName: Blood Blade
+  upgradeDescription: Deals more damage but hurts user too.
+  upgradeSprite: {fileID: 21300000, guid: 01ff5dad03cb1ee4091b7f550da5c15e, type: 3}
   itemExperience: 1
   upgraded: 0
-  def: 0
-  defenseMethod: {fileID: 0}
---- !u!114 &1837039911331732262
+  damageMultiplier: 1
+  attackSpeedGaugeMax: 1.5
+  attackMethod: {fileID: 0}
+--- !u!114 &4446842041572653988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
+  m_GameObject: {fileID: 4446842041572653991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7d48e67fe1c2e49bc9f88ede044912, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b019e691475db34eb1011ddfe7a17fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardDef: 2
-  upgradedDef: 5
+  damageMultiplier: 1.5
+  selfDamagePercent: 0.25

@@ -17,7 +17,6 @@ public class playerCombatant : combatant
 
     public delegate void playerHitFunctions();
     public static event playerHitFunctions playerHit;
-    public GameObject damageText;
 
     public Animation anim;
 
@@ -118,8 +117,12 @@ public class playerCombatant : combatant
 
     public override void takeDamage(int damage)
     {
+        GameObject damageNums;
         if (damage <= 0)
         {
+            damageNums = Instantiate(floatingText, transform.position, Quaternion.identity);
+            damageNums.GetComponentInChildren<TextMesh>().color = Color.blue;
+            damageNums.GetComponentInChildren<TextMesh>().text = "blocked!";
             return;
 
         }
@@ -127,7 +130,7 @@ public class playerCombatant : combatant
         health -= damage;
         particles.Play();
 
-        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageNums = Instantiate(floatingText, transform.position, Quaternion.identity);
         damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
 
         if (playerHit != null)

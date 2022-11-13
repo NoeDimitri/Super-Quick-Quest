@@ -13,8 +13,6 @@ public class enemyCombatant : combatant
     public Sprite enemySprite;
     public Image monsterImage;
 
-    public GameObject damageText;
-
     void Start()
     {
         //I will only try to hit the player
@@ -30,16 +28,22 @@ public class enemyCombatant : combatant
     }
     public override void takeDamage(int damage)
     {
+        GameObject damageNums;
+
         if (damage <= 0)
         {
+            damageNums = Instantiate(floatingText, transform.position, Quaternion.identity);
+            damageNums.GetComponentInChildren<TextMesh>().color = Color.blue;
+            damageNums.GetComponentInChildren<TextMesh>().text = "blocked!";
             return;
+
         }
 
         health -= damage;
         
         particles.Play();
 
-        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageNums = Instantiate(floatingText, transform.position, Quaternion.identity);
         damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
 
         if (health <= 0)

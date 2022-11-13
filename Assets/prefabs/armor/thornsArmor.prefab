@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7305097026667575497
+--- !u!1 &8943900950012663701
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,62 +8,62 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7305097026667575498}
-  - component: {fileID: 7305097026667575499}
-  - component: {fileID: 1837039911331732262}
+  - component: {fileID: 4471148567668955779}
+  - component: {fileID: 7316171364322182156}
+  - component: {fileID: 952362813313632329}
   m_Layer: 0
-  m_Name: chibi knight
+  m_Name: thornsArmor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7305097026667575498
+--- !u!4 &4471148567668955779
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 8943900950012663701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.061735153, y: 0.0059171915, z: -1.0528933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7305097026667575499
+--- !u!114 &7316171364322182156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
+  m_GameObject: {fileID: 8943900950012663701}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97bb6c28dd4b20a49b2f46e07bd62ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   penalty: 
-  upgradeName: Chibi Knight
-  upgradeDescription: Blocks damage by a flat amount!
-  upgradeSprite: {fileID: 21300000, guid: ff253d400597f804a8ffdb0f67cf83ea, type: 3}
+  upgradeName: Armor of Thorns
+  upgradeDescription: Reflects inflicted damage back to attacker
+  upgradeSprite: {fileID: 21300000, guid: ac95f20f46e30844bb06163887fd78e2, type: 3}
   itemExperience: 1
   upgraded: 0
   def: 0
-  defenseMethod: {fileID: 0}
---- !u!114 &1837039911331732262
+  defenseMethod: {fileID: 952362813313632329}
+--- !u!114 &952362813313632329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7305097026667575497}
+  m_GameObject: {fileID: 8943900950012663701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7d48e67fe1c2e49bc9f88ede044912, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e696498f1d4ea048903de30b8b4ef1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardDef: 2
-  upgradedDef: 5
+  reflect: 0.5
+  upgradedReflect: 1

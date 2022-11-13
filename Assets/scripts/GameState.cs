@@ -96,6 +96,24 @@ public class GameState : MonoBehaviour
 
     }
 
+    public bool upgradedArmor()
+    {
+
+        return currPlayerInfo.currArmor.upgraded;
+
+    }
+    public bool upgradedWeapon()
+    {
+
+        return currPlayerInfo.currWeapon.upgraded;
+
+    }
+
+    public float returnWeaponAtkMultiplier()
+    {
+
+        return currPlayerInfo.currWeapon.damageMultiplier;
+    }
 
 }
     

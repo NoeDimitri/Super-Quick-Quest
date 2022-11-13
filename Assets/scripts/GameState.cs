@@ -109,5 +109,11 @@ public class GameState : MonoBehaviour
 
     }
 
+    public float returnWeaponAtkMultiplier()
+    {
+
+        return currPlayerInfo.currWeapon.damageMultiplier;
+    }
+
 }
     

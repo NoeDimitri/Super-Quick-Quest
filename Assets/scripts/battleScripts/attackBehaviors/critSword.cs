@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class critterMask : generalDefend
+public class critSword : generalAttack
 {
     public float critChance, critChanceEmpowered, critMultiplier, critMultiplierEmpowered;
-
-    public override void applyDefense(int amount, combatant defender, combatant attacker)
+    public GameObject floatingText;
+    public override void performAttack(combatant attacker, combatant target)
     {
         float finalCritChance;
         float finalCritMultiplier;
@@ -23,14 +23,19 @@ public class critterMask : generalDefend
             finalCritMultiplier = critMultiplier;
         }
 
-        int newAmount = amount;
+        int newAmount = attacker.attack;
 
+        //We crit!
         if (Random.Range(0, 100) < finalCritChance)
         {
-            newAmount = (int)(amount * finalCritMultiplier);
+            newAmount = (int)(attacker.attack * finalCritMultiplier);
+
+            floatingText = Instantiate(floatingText, target.gameObject.transform.position, Quaternion.identity);
+            floatingText.GetComponentInChildren<TextMesh>().color = Color.blue;
+            floatingText.GetComponentInChildren<TextMesh>().text = "crit!";
         }
 
-        defender.takeDamage(newAmount);
+        target.defendMethod.applyDefense(newAmount, target, attacker);
 
     }
 }

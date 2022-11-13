@@ -29,6 +29,7 @@ public abstract class combatant : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text attackText;
 
+    public GameObject floatingText;
 
     private void Start()
     {
@@ -40,8 +41,6 @@ public abstract class combatant : MonoBehaviour
         updateStats();
 
     }
-
-
     private void startCombat()
     {
         activeCombat = true;
@@ -57,10 +56,20 @@ public abstract class combatant : MonoBehaviour
         startBattle.finishedStart -= startCombat;
     }
 
-    public abstract void takeDamage(int damage);
+    public void spawnText(string textToDisplay, Color textColor)
+    {
+        GameObject tempText;
+        tempText = Instantiate(floatingText, gameObject.transform.position, Quaternion.identity);
+        tempText.GetComponentInChildren<TextMesh>().color = textColor;
+        tempText.GetComponentInChildren<TextMesh>().text = textToDisplay;
+
+    }
+
+public abstract void takeDamage(int damage);
 
     public void updateStats()
     {
+
         healthText.text = health.ToString();
         attackText.text = attack.ToString();
 

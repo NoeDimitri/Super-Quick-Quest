@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class monsterInfo : MonoBehaviour
 {
 
+    public string monsterName;
+    [TextArea(8, 15)]
+    public string description;
+
     public int health;
     public int attack;
 
@@ -14,9 +18,6 @@ public class monsterInfo : MonoBehaviour
 
     public generalAttack attackMethod;
     public generalDefend defendMethod;
-
-    public string description;
-    public string monsterName;
 
     public Sprite monsterSprite;
 

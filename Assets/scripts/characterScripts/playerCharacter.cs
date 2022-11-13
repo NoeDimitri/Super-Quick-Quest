@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class playerCharacter : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class playerCharacter : MonoBehaviour
 
     public TMP_Text weaponText;
     public TMP_Text armorText;
-    public SpriteRenderer weaponImage;
-    public SpriteRenderer armorImage;
+    public Image weaponImage;
+    public Image armorImage;
 
     public levelPips weaponPip;
     public levelPips armorPip;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class shopListing : MonoBehaviour
@@ -16,7 +17,7 @@ public class shopListing : MonoBehaviour
     public TMP_Text Title;
     public TMP_Text Description;
     public TMP_Text penalty;
-    public SpriteRenderer itemSprite;
+    public Image itemSprite;
     private SpriteRenderer listingColor;
 
     [Space(10)]

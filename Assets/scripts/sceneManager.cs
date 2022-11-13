@@ -32,8 +32,18 @@ public class sceneManager : MonoBehaviour
     void loadShopScene()
     {
 
-        SceneManager.LoadScene("shopScene");
 
+        GameState.Instance.currTier++;
+
+        foreach(GameObject obj in GameState.Instance.savedObjects)
+        {
+
+            Destroy(obj);
+
+        }
+        GameState.Instance.savedObjects.Clear();
+
+        SceneManager.LoadScene("shopScene");
 
 
     }

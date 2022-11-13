@@ -292,6 +292,7 @@ MonoBehaviour:
   upgradeName: chibi knight
   upgradeDescription: hUHH
   upgradeSprite: {fileID: 21300000, guid: ff253d400597f804a8ffdb0f67cf83ea, type: 3}
+  itemExperience: 1
   upgraded: 0
   def: 0
   defenseMethod: {fileID: 0}
@@ -778,6 +779,7 @@ MonoBehaviour:
   upgradeName: Double Edged
   upgradeDescription: Jeremy pog
   upgradeSprite: {fileID: 21300000, guid: 0c728aa746ea81a43b68e2d04a52f8d5, type: 3}
+  itemExperience: 1
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 2
@@ -1078,6 +1080,7 @@ MonoBehaviour:
   upgradeName: ninja mode
   upgradeDescription: very epic
   upgradeSprite: {fileID: 21300000, guid: 39558d3668ae12d448bd941c67c9f3df, type: 3}
+  itemExperience: 1
   upgraded: 0
   def: 0
   defenseMethod: {fileID: 0}
@@ -2764,9 +2767,10 @@ MonoBehaviour:
   upgradeName: None
   upgradeDescription: no weapon
   upgradeSprite: {fileID: 0}
+  itemExperience: 1
   upgraded: 0
   damageMultiplier: 1
-  attackSpeedGaugeMax: 0
+  attackSpeedGaugeMax: 3
   attackMethod: {fileID: 0}
 --- !u!1 &551559831
 GameObject:
@@ -3170,9 +3174,10 @@ MonoBehaviour:
   upgradeName: Weapon Yeah Yeah
   upgradeDescription: Baby baby baby
   upgradeSprite: {fileID: 21300000, guid: e44e1399d4ea2cc4aa3a213ec210d601, type: 3}
+  itemExperience: 1
   upgraded: 0
   damageMultiplier: 0
-  attackSpeedGaugeMax: 0
+  attackSpeedGaugeMax: 2
   attackMethod: {fileID: 0}
 --- !u!1 &618330547
 GameObject:
@@ -4130,9 +4135,10 @@ MonoBehaviour:
   upgradeName: banger sword
   upgradeDescription: this is a banger
   upgradeSprite: {fileID: 21300000, guid: 30bc47a174d183942a0ef1de8f7f3977, type: 3}
+  itemExperience: 1
   upgraded: 0
   damageMultiplier: 0
-  attackSpeedGaugeMax: 0
+  attackSpeedGaugeMax: 2
   attackMethod: {fileID: 0}
 --- !u!1 &896468144
 GameObject:
@@ -4250,7 +4256,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907328018
 GameObject:
@@ -5342,9 +5348,10 @@ MonoBehaviour:
   upgradeName: Biggest BONK
   upgradeDescription: can infinitely level
   upgradeSprite: {fileID: 21300000, guid: 523712ff87b0d3d49bc32f167a8bce49, type: 3}
+  itemExperience: 1
   upgraded: 0
   damageMultiplier: 0
-  attackSpeedGaugeMax: 0
+  attackSpeedGaugeMax: 2
   attackMethod: {fileID: 0}
 --- !u!1 &1046132488
 GameObject:
@@ -5377,7 +5384,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   attack: 1
-  gameState: {fileID: 1713244237}
   maxHealth: 0
   maxAttack: 0
   currentWeapon: {fileID: 610905703}
@@ -8337,6 +8343,7 @@ MonoBehaviour:
   upgradeName: No Armor
   upgradeDescription: no armor :(
   upgradeSprite: {fileID: 0}
+  itemExperience: 1
   upgraded: 0
   def: 0
   defenseMethod: {fileID: 0}

@@ -21,7 +21,7 @@ public class upgrades : MonoBehaviour
 
 public class equipment : upgrades
 {
-    protected int itemExperience = 1;
+    public int itemExperience = 1;
 
     //if it's been fully upgraded
     public bool upgraded = false;

@@ -16,7 +16,7 @@ public class enemyCombatant : combatant
         //I will only try to hit the player
         playerObj = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
         target = playerObj;
-        currentAtkCharge = Random.Range(0f, 0.5f);
+        currentAtkCharge = Random.Range(0f, 0.25f) * atkChargeMax;
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
 

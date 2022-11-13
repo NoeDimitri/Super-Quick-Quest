@@ -53,8 +53,6 @@ public class playerCharacter : MonoBehaviour
 
             refreshStats();
 
-            weaponPip.updatePips(currentWeapon.getLevel());
-            armorPip.updatePips(currentArmor.getLevel());
         }
 
     }

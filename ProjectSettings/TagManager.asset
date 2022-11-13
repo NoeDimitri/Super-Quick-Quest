@@ -8,6 +8,11 @@ TagManager:
   - refresh
   - player
   - checkMonsters
+  - Undefined
+  - enemy
+  - spawnLocation
+  - weapon
+  - armor
   layers:
   - Default
   - TransparentFX

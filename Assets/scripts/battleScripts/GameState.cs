@@ -7,18 +7,32 @@ public class GameState : MonoBehaviour
 
     public encounter currEncounter;
 
-    private playerInfo currPlayerInfo;
-    public playerCharacter shoppingChar;
+    public playerInfo currPlayerInfo;
+    private playerCharacter shoppingChar;
 
     public int currTier;
 
     // Start is called before the first frame update
     void Start()
     {
-        currPlayerInfo = GetComponent<playerInfo>();
-        shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
+
+
+        if(GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
+        }
+
+
+        //For testing
+        saveCharacter();
+
         //if instance is null;
         currTier = 1;
+    }
+
+    private void Awake()
+    {
+        currPlayerInfo = new playerInfo();
     }
 
     private void OnEnable()
@@ -30,9 +44,21 @@ public class GameState : MonoBehaviour
         shopTimer.timerFinished -= saveCharacter;
     }
 
+
+    //We have an associated class that just stores the current player stats
     void saveCharacter()
     {
         currPlayerInfo.clone(shoppingChar);
+    }
+
+    public void copyPlayerCombat(playerCombatant player)
+    {
+
+        player.health = currPlayerInfo.health;
+        player.attack = currPlayerInfo.attack;
+        player.equippedArmor = currPlayerInfo.currArmor;
+        player.equippedWeapon = currPlayerInfo.currWeapon;
+
     }
 
 

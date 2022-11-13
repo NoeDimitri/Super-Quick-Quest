@@ -44,7 +44,7 @@ public class playerCharacter : MonoBehaviour
         currentWeapon = GetComponentInChildren<weapon>();
         currentArmor = GetComponentInChildren<armor>();
 
-        refreshStats();
+        //refreshStats();
     }
 
     public void refreshStats()

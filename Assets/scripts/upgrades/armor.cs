@@ -5,9 +5,11 @@ using UnityEngine;
 public class armor : equipment
 {
     public int def;
+    public generalDefend defenseMethod;
+
     private void Start()
     {
-
+        defenseMethod = GetComponent<generalDefend>();
         ColorUtility.TryParseHtmlString("#1E90FF", out associatedColor);
     }
     public void clone(armor newArmor)

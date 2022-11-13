@@ -7,13 +7,12 @@ using UnityEngine.SceneManagement;
 public class buttonScript : MonoBehaviour
 {
 
-    private Button restartButton;
+    public Button restartButton, exitGameButton;
 
     private void Start()
     {
-        restartButton = GetComponent<Button>();
-
         restartButton.onClick.AddListener(loadStart);
+        exitGameButton.onClick.AddListener(closeGame);
     }
 
     void loadStart()
@@ -21,6 +20,11 @@ public class buttonScript : MonoBehaviour
 
         SceneManager.LoadScene("shopScene");
 
+    }
+
+    void closeGame()
+    {
+        Application.Quit();
     }
 
 }

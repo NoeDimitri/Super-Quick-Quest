@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62762678}
   - component: {fileID: 62762679}
+  - component: {fileID: 62762680}
   m_Layer: 0
   m_Name: armorTest
   m_TagString: Untagged
@@ -173,6 +174,19 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: ff253d400597f804a8ffdb0f67cf83ea, type: 3}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
+--- !u!114 &62762680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62762677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &64617493
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 143831067}
   - component: {fileID: 143831068}
+  - component: {fileID: 143831069}
   m_Layer: 0
   m_Name: armorTest2
   m_TagString: Untagged
@@ -574,6 +589,19 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: 39558d3668ae12d448bd941c67c9f3df, type: 3}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
+--- !u!114 &143831069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143831066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &158839862
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 0}
 --- !u!114 &292081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +858,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacker: {fileID: 0}
 --- !u!1 &344981129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 550797525}
   - component: {fileID: 550797526}
+  - component: {fileID: 550797527}
   m_Layer: 0
   m_Name: starterWeapon
   m_TagString: Untagged
@@ -1528,6 +1555,19 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 1
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
+--- !u!114 &550797527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550797524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &551559831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610905702}
   - component: {fileID: 610905703}
+  - component: {fileID: 610905704}
   m_Layer: 0
   m_Name: weaponTest
   m_TagString: Untagged
@@ -1857,6 +1898,19 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
+--- !u!114 &610905704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610905701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &669433885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877918048}
   - component: {fileID: 877918049}
+  - component: {fileID: 877918050}
   m_Layer: 0
   m_Name: weaponTest2 (1)
   m_TagString: Untagged
@@ -2525,6 +2580,19 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
+--- !u!114 &877918050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877918047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907328018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020581241}
   - component: {fileID: 1020581242}
+  - component: {fileID: 1020581243}
   m_Layer: 0
   m_Name: weaponTest2
   m_TagString: Untagged
@@ -3055,6 +3124,19 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
+--- !u!114 &1020581243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020581240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046132488
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,6 +4138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599486585}
   - component: {fileID: 1599486586}
+  - component: {fileID: 1599486587}
   m_Layer: 0
   m_Name: starterArmor
   m_TagString: Untagged
@@ -4096,6 +4179,19 @@ MonoBehaviour:
   upgradeSprite: {fileID: 0}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
+--- !u!114 &1599486587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599486584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650364971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,7 +4526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEncounter: {fileID: 0}
-  shoppingChar: {fileID: 0}
+  currPlayerInfo: {fileID: 0}
   currTier: 0
 --- !u!4 &1713244238
 Transform:
@@ -4567,8 +4663,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decaySpeed: 0.02
-  currPlayerInfo: {fileID: 0}
-  player: {fileID: 0}
   maxTime: 60
 --- !u!1 &1758014515
 GameObject:

@@ -1647,7 +1647,7 @@ MonoBehaviour:
   renderedSprite: {fileID: 0}
   fadedColor: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
   activatedColor: {r: 1, g: 0.9764706, b: 0.30980393, a: 1}
-  maxedColor: {r: 0.7921569, g: 0.31764707, b: 0.972549, a: 0}
+  maxedColor: {r: 0.7921569, g: 0.31764707, b: 0.972549, a: 1}
   isWeapon: 1
 --- !u!1 &321244880
 GameObject:

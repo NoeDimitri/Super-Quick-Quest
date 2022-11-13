@@ -56,6 +56,9 @@ public class battleInitializer : MonoBehaviour
         currentPlayer.attack = GameState.Instance.currPlayerInfo.attack;
         currentPlayer.equippedArmor = GameState.Instance.currPlayerInfo.currArmor;
         currentPlayer.equippedWeapon = GameState.Instance.currPlayerInfo.currWeapon;
+        currentPlayer.attackMethod = currentPlayer.equippedWeapon.attackMethod;
+        currentPlayer.defendMethod = currentPlayer.equippedArmor.defenseMethod;
+
         currentPlayer.atkChargeMax = currentPlayer.equippedWeapon.attackSpeedGaugeMax;
     }
 

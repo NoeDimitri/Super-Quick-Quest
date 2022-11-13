@@ -5,6 +5,7 @@ using UnityEngine;
 public class doubleEdgedSword : generalAttack
 {
 
+    public int damageMultiplier;
     public float selfDamagePercent;
 
     public override void performAttack(combatant attacker, combatant target)
@@ -12,9 +13,10 @@ public class doubleEdgedSword : generalAttack
 
 /*        GameState.Instance.currPlayerInfo.currWeapon.getLevel();
 */
-        int newAttackDamage = attacker.attack * 5;
 
-        Debug.Log(attacker.attack * selfDamagePercent);
+        int newAttackDamage = attacker.attack * damageMultiplier;
+
+        Debug.Log(Mathf.CeilToInt(attacker.attack * selfDamagePercent));
 
         attacker.takeDamage(Mathf.CeilToInt(attacker.attack * selfDamagePercent));
 

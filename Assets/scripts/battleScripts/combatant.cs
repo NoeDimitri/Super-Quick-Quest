@@ -53,17 +53,7 @@ public abstract class combatant : MonoBehaviour
 
     }
 
-    public void takeDamage(int damage)
-    {
-        health -= damage;
-        particles.Play();
-        if (health <= 0)
-        {
-            death();
-        }
-
-
-    }
+    public abstract void takeDamage(int damage);
 
     public void updateStats()
     {

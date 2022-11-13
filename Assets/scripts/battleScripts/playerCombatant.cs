@@ -18,6 +18,8 @@ public class playerCombatant : combatant
     public weapon equippedWeapon;
     public armor equippedArmor;
 
+    public GameObject damageText;
+
     [Header("Enemies")]
     public List<combatant> enemyList;
 
@@ -68,6 +70,31 @@ public class playerCombatant : combatant
         }
 
         updateStats();
+
+    }
+    public override void takeDamage(int damage)
+    {
+        if(damage <= 0)
+        {
+            return;
+        }
+
+        health -= damage;
+        particles.Play();
+
+        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
+
+        if (playerHit != null)
+        {
+            playerHit();
+        }
+
+        if (health <= 0)
+        {
+            death();
+        }
+
 
     }
 

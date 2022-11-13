@@ -12,6 +12,8 @@ public class enemyCombatant : combatant
     public Sprite enemySprite;
     public Image monsterImage;
 
+    public GameObject damageText;
+
     void Start()
     {
         //I will only try to hit the player
@@ -22,12 +24,31 @@ public class enemyCombatant : combatant
         particles = GetComponentInChildren<ParticleSystem>();
 
     }
+    public override void takeDamage(int damage)
+    {
+        if (damage <= 0)
+        {
+            return;
+        }
 
+        health -= damage;
+        particles.Play();
+
+        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
+
+        if (health <= 0)
+        {
+            death();
+        }
+
+
+    }
     protected override void death()
     {
         playerObj.removeEnemy(this);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
 
     }
 

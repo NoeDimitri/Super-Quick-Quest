@@ -11,12 +11,7 @@ public class levelPips : MonoBehaviour
 
     void Start()
     {
-/*        foreach(SpriteRenderer pip in pips)
-        {
 
-            pip.color = fadedColor;
-
-        }*/
     }
 
     //Sets current number of pips to glow

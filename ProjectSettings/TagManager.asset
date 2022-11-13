@@ -13,6 +13,7 @@ TagManager:
   - spawnLocation
   - weapon
   - armor
+  - pips
   layers:
   - Default
   - TransparentFX

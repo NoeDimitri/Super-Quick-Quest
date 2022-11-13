@@ -16,6 +16,7 @@ public class battleInitializer : MonoBehaviour
     public delegate void battleInitialized();
     public static event battleInitialized finishedInitialization;
 
+
     void Start()
     {
         foreach (GameObject pos in GameObject.FindGameObjectsWithTag("spawnLocation"))

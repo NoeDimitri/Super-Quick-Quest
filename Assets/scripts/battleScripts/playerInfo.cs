@@ -18,4 +18,14 @@ public class playerInfo
         currArmor = newPlayer.currentArmor;
 
     }
+
+    public void displayInfo()
+    {
+        Debug.Log("health: " + health);
+        Debug.Log("attack: " + attack);
+        Debug.Log("currWeapon: " + currWeapon);
+        Debug.Log("currArmor: " + currArmor);
+
+
+    }
 }

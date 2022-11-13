@@ -26,10 +26,19 @@ public class GameState : MonoBehaviour
         //For testing, loads in random stuff
         if(testingMode)
         {
-
             saveCharacter();
+            currPlayerInfo.displayInfo();
+
+            if(GameObject.FindGameObjectsWithTag("pips") != null)
+            {
+                foreach(GameObject obj in GameObject.FindGameObjectsWithTag("pips"))
+                {
+                    obj.GetComponent<levelSquarePips>().initPips();
+                }
+            }
 
         }
+
 
 
     }
@@ -51,6 +60,7 @@ public class GameState : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     private void OnEnable()

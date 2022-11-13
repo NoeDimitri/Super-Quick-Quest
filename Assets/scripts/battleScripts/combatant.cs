@@ -62,14 +62,19 @@ public abstract class combatant : MonoBehaviour
 
     }
 
+    private void startCombat()
+    {
+        activeCombat = true;
+    }
+
     private void OnEnable()
     {
-        
+        startBattle.finishedStart += startCombat;
     }
 
     private void OnDisable()
     {
-        
+        startBattle.finishedStart -= startCombat;
     }
 
     public abstract void takeDamage(int damage);

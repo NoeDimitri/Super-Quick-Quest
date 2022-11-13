@@ -12,13 +12,9 @@ public class playerCombatant : combatant
     public delegate void gameOverFunctions();
     public static event gameOverFunctions gameOver;
 
-    public delegate void playerHitFunctions();
-    public static event playerHitFunctions playerHit;
-
     public weapon equippedWeapon;
     public armor equippedArmor;
 
-    public GameObject damageText;
 
     [Header("Enemies")]
     public List<combatant> enemyList;
@@ -28,12 +24,20 @@ public class playerCombatant : combatant
     private void OnEnable()
     {
         battleInitializer.finishedInitialization += populateEnemyList;
+        startBattle.finishedStart += startCombat;
     }
 
     private void OnDisable()
     {
         battleInitializer.finishedInitialization += populateEnemyList;
+        startBattle.finishedStart -= startCombat;
     }
+
+    private void startCombat()
+    {
+        activeCombat = true;
+    }
+
     private void Start()
     {
         enemiesDefeated = false;
@@ -56,45 +60,23 @@ public class playerCombatant : combatant
     private void Update()
     {
 
-        currentAtkCharge += Time.deltaTime;
-        slider.value = Mathf.Min(currentAtkCharge / atkChargeMax, 1);
-
-        if (currentAtkCharge >= atkChargeMax && !enemiesDefeated && battleInitialized)
+        if (activeCombat)
         {
-            target = enemyList[Random.Range(0, enemyList.Count)];
+            currentAtkCharge += Time.deltaTime;
+            slider.value = Mathf.Min(currentAtkCharge / atkChargeMax, 1);
 
-            attackMethod.performAttack(this, target);
+            if (currentAtkCharge >= atkChargeMax && !enemiesDefeated && battleInitialized)
+            {
+                target = enemyList[Random.Range(0, enemyList.Count)];
 
-            currentAtkCharge = 0;
+                attackMethod.performAttack(this, target);
 
+                currentAtkCharge = 0;
+
+            }
         }
 
         updateStats();
-
-    }
-    public override void takeDamage(int damage)
-    {
-        if(damage <= 0)
-        {
-            return;
-        }
-
-        health -= damage;
-        particles.Play();
-
-        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
-        damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
-
-        if (playerHit != null)
-        {
-            playerHit();
-        }
-
-        if (health <= 0)
-        {
-            death();
-        }
-
 
     }
 

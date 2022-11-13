@@ -24,9 +24,13 @@ public class battleInitializer : MonoBehaviour
             spawnLocations.Add(pos.GetComponent<Transform>());
         }
 
+        //Initializing player stuff
         currentPlayer = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
-
         currentGameState.copyPlayerCombat(currentPlayer);
+
+        currentPlayer.attackMethod = currentPlayer.equippedWeapon.attackMethod;
+        currentPlayer.defendMethod = currentPlayer.equippedArmor.defenseMethod;
+
 
         int i = 0;
 

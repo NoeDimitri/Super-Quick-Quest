@@ -249,6 +249,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: ff253d400597f804a8ffdb0f67cf83ea, type: 3}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
 --- !u!1 &64617493
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +925,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: 39558d3668ae12d448bd941c67c9f3df, type: 3}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
 --- !u!1 &158839862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 0}
 --- !u!114 &292081503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,7 +1317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacker: {fileID: 0}
 --- !u!1 &297555746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,6 +2470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 1065375446}
+  dropDown: {fileID: 0}
 --- !u!1 &529251465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,6 +2612,7 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 1
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
 --- !u!1 &551559831
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,6 +3018,7 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
 --- !u!1 &618330547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +3978,7 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
 --- !u!1 &907328018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,6 +5069,7 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 0
   attackSpeedGaugeMax: 0
+  attackMethod: {fileID: 0}
 --- !u!1 &1046132488
 GameObject:
   m_ObjectHideFlags: 0
@@ -7860,6 +7865,7 @@ MonoBehaviour:
   upgradeSprite: {fileID: 0}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
 --- !u!1 &1599817571
 GameObject:
   m_ObjectHideFlags: 0
@@ -8909,7 +8915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEncounter: {fileID: 0}
-  shoppingChar: {fileID: 0}
+  currPlayerInfo: {fileID: 0}
   currTier: 0
 --- !u!4 &1713244238
 Transform:
@@ -15268,6 +15274,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2117066712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117066714}
+  - component: {fileID: 2117066713}
+  m_Layer: 0
+  m_Name: sceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2117066713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117066712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1a81c8ad5868e49921f78f9aeb659f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2117066714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117066712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57400006, y: 0.19659345, z: -1.1941593}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2126183230
 GameObject:
   m_ObjectHideFlags: 0

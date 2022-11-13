@@ -15,7 +15,6 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currPlayerInfo = GetComponent<playerInfo>();
         if(GameObject.FindGameObjectWithTag("Player") != null)
         {
             shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
@@ -24,6 +23,7 @@ public class GameState : MonoBehaviour
         //if instance is null;
         currTier = 1;
     }
+
 
     private void OnEnable()
     {
@@ -38,7 +38,7 @@ public class GameState : MonoBehaviour
     //We have an associated class that just stores the current player stats
     void saveCharacter()
     {
-        currPlayerInfo.clone(shoppingChar);
+        currPlayerInfo.copyInfo(shoppingChar);
     }
 
     public void copyPlayerCombat(playerCombatant player)

@@ -170,7 +170,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1742215956}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &430372702
 MonoBehaviour:
@@ -191,6 +191,7 @@ MonoBehaviour:
   upgraded: 0
   damageMultiplier: 1
   attackSpeedGaugeMax: 5
+  attackMethod: {fileID: 0}
 --- !u!1 &605208123
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,8 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5928b4b8ea235bc4eb76f5ab5076e6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  attack: 100
+  health: 10
+  attack: 5
   currWeapon: {fileID: 430372702}
   currArmor: {fileID: 1159231182}
 --- !u!1 &1093205769
@@ -432,7 +433,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1742215956}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1159231182
 MonoBehaviour:
@@ -452,6 +453,86 @@ MonoBehaviour:
   upgradeSprite: {fileID: 0}
   upgraded: 0
   def: 0
+  defenseMethod: {fileID: 0}
+--- !u!1 &1208029785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208029786}
+  - component: {fileID: 1208029789}
+  - component: {fileID: 1208029788}
+  - component: {fileID: 1208029787}
+  m_Layer: 0
+  m_Name: testMonster2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208029786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208029785}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742215956}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1208029787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208029785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1208029788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208029785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1208029789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208029785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  attack: 8
+  atkChargeMax: 3
+  defense: 0
+  attackMethod: {fileID: 1208029788}
+  defendMethod: {fileID: 1208029787}
+  description: gaming
+  monsterName: Yeah
+  monsterSprite: {fileID: 21300000, guid: e3bcb0163ea9176419e2ea83c617844e, type: 3}
 --- !u!1 &1319259642
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +649,6 @@ GameObject:
   - component: {fileID: 1506973702}
   - component: {fileID: 1506973704}
   - component: {fileID: 1506973703}
-  - component: {fileID: 1506973706}
   m_Layer: 0
   m_Name: testMonsterInfo
   m_TagString: Untagged
@@ -636,29 +716,6 @@ Transform:
   m_Father: {fileID: 1742215956}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1506973706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506973701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e0e25c88e9ea4b439ba2730f083e313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  attack: 0
-  atkChargeMax: 0
-  defense: 0
-  particles: {fileID: 0}
-  attackMethod: {fileID: 0}
-  defendMethod: {fileID: 0}
-  target: {fileID: 0}
-  healthText: {fileID: 0}
-  attackText: {fileID: 0}
-  enemySprite: {fileID: 0}
 --- !u!1001 &1520703671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -811,8 +868,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsters:
   - {fileID: 1506973702}
-  - {fileID: 1506973702}
-  - {fileID: 1506973702}
+  - {fileID: 1208029789}
+  - {fileID: 1208029789}
   - {fileID: 1506973702}
   tier: 1
 --- !u!4 &1742215956
@@ -828,6 +885,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1506973705}
+  - {fileID: 1208029786}
   - {fileID: 430372701}
   - {fileID: 1159231181}
   m_Father: {fileID: 968670154}

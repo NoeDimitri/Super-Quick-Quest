@@ -30,8 +30,8 @@ public class battleInitializer : MonoBehaviour
         copyPlayerStats();
 
 
+        //populates enemy indices
         int i = 0;
-
         foreach(monsterInfo monInfo in GameState.Instance.currEncounter.monsters)
         {
             createEnemy(monInfo, spawnLocations[i++]);

@@ -9,6 +9,9 @@ public class playerCombatant : combatant
     public delegate void foesDefeated();
     public static event foesDefeated battleWon;
 
+    public delegate void gameOverFunctions();
+    public static event gameOverFunctions gameOver;
+
     public weapon equippedWeapon;
     public armor equippedArmor;
 
@@ -67,7 +70,12 @@ public class playerCombatant : combatant
 
     protected override void death()
     {
-        Debug.Log("player has died");
+        if(gameOver != null)
+        {
+
+            gameOver();
+
+        }
     }
 
     public void removeEnemy(combatant deadEnemy)

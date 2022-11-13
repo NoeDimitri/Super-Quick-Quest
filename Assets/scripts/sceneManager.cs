@@ -10,7 +10,7 @@ public class sceneManager : MonoBehaviour
 
     private void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Player"))
+        if (GameObject.FindGameObjectWithTag("Player"))
         {
             shopPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
 
@@ -21,11 +21,23 @@ public class sceneManager : MonoBehaviour
     {
         shopTimer.timerFinished += loadBattleScene;
         playerCombatant.battleWon += loadShopScene;
+        playerCombatant.gameOver += loadGameOver;
     }
     private void OnDisable()
     {
         shopTimer.timerFinished -= loadBattleScene;
         playerCombatant.battleWon -= loadShopScene;
+        playerCombatant.gameOver -= loadGameOver;
+
+
+    }
+
+    void loadGameOver()
+    {
+        deleteTrash();
+
+        Destroy(GameState.Instance);
+        SceneManager.LoadScene("gameOver");
 
     }
 
@@ -35,19 +47,23 @@ public class sceneManager : MonoBehaviour
 
         GameState.Instance.currTier++;
 
-        foreach(GameObject obj in GameState.Instance.savedObjects)
-        {
-
-            Destroy(obj);
-
-        }
-        GameState.Instance.savedObjects.Clear();
+        deleteTrash();
 
         SceneManager.LoadScene("shopScene");
 
 
     }
 
+    void deleteTrash()
+    {
+        foreach (GameObject obj in GameState.Instance.savedObjects)
+        {
+
+            Destroy(obj);
+
+        }
+        GameState.Instance.savedObjects.Clear();
+    }
 
 
     void loadBattleScene()

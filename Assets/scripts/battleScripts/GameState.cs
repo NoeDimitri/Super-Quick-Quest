@@ -13,7 +13,6 @@ public class GameState : MonoBehaviour
 
     public int currTier;
     public bool testingMode;
-
     public List<GameObject> savedObjects;
 
     // Start is called before the first frame update
@@ -73,6 +72,7 @@ public class GameState : MonoBehaviour
     //We have an associated class that just stores the current player stats
     void saveCharacter()
     {
+        shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
         currPlayerInfo.clone(shoppingChar);
     }
 

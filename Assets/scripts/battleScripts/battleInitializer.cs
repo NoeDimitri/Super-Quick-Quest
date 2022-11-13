@@ -24,9 +24,11 @@ public class battleInitializer : MonoBehaviour
             spawnLocations.Add(pos.GetComponent<Transform>());
         }
 
+
         currentPlayer = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
 
-        currentGameState.copyPlayerCombat(currentPlayer);
+        //Duplicates over player stats
+        copyPlayerStats();
 
         int i = 0;
 
@@ -46,6 +48,14 @@ public class battleInitializer : MonoBehaviour
 
         }
 
+    }
+
+    void copyPlayerStats()
+    {
+        currentPlayer.health = GameState.Instance.currPlayerInfo.health;
+        currentPlayer.attack = GameState.Instance.currPlayerInfo.attack;
+        currentPlayer.equippedArmor = GameState.Instance.currPlayerInfo.currArmor;
+        currentPlayer.equippedWeapon = GameState.Instance.currPlayerInfo.currWeapon;
     }
 
     void createEnemy(monsterInfo enemy, Transform pos)

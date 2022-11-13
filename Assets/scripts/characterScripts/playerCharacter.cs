@@ -8,7 +8,6 @@ public class playerCharacter : MonoBehaviour
     // Start is called before the first frame update
     public enum stats {hp, atk};
 
-
     [Header("Player Stats")]
     public int health;
     public int attack;
@@ -50,6 +49,10 @@ public class playerCharacter : MonoBehaviour
         maxHealth = tierToMaxHealth(gameState.getCurrTier());
 
         refreshStats();
+
+        weaponPip.updatePips(currentWeapon.getLevel());
+        armorPip.updatePips(currentArmor.getLevel());
+
     }
 
     public int tierToMaxHealth(int tier)

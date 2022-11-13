@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    public static GameState Instance;
 
     public encounter currEncounter;
 
@@ -11,6 +12,9 @@ public class GameState : MonoBehaviour
     private playerCharacter shoppingChar;
 
     public int currTier;
+    public bool testingMode;
+
+    public List<GameObject> savedObjects;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +26,32 @@ public class GameState : MonoBehaviour
             shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
         }
 
+        //For testing, loads in random stuff
+        if(testingMode)
+        {
 
-        //For testing
-        saveCharacter();
+            saveCharacter();
 
-        //if instance is null;
-        currTier = 1;
+        }
+
+
     }
 
     private void Awake()
     {
         currPlayerInfo = new playerInfo();
+
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+            currTier = 1;
+
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()

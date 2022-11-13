@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class playerCombatant : combatant
 {
+    public delegate void foesDefeated();
+    public static event foesDefeated battleWon;
+
     public weapon equippedWeapon;
     public armor equippedArmor;
 
@@ -73,6 +76,11 @@ public class playerCombatant : combatant
 
         if (enemyList.Count == 0)
         {
+            if (battleWon != null)
+            {
+                battleWon();
+            }
+
             enemiesDefeated = true;
             Debug.Log("we win!!");
         }

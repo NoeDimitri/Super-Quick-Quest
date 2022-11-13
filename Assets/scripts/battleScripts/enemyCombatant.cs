@@ -10,6 +10,7 @@ public class enemyCombatant : combatant
     playerCombatant playerObj;
 
     public Sprite enemySprite;
+    public Image monsterImage;
 
     void Start()
     {

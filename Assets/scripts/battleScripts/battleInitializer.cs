@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class battleInitializer : MonoBehaviour
 {
@@ -33,7 +34,6 @@ public class battleInitializer : MonoBehaviour
 
         foreach(monsterInfo monInfo in GameState.Instance.currEncounter.monsters)
         {
-
             createEnemy(monInfo, spawnLocations[i++]);
             
 
@@ -70,7 +70,8 @@ public class battleInitializer : MonoBehaviour
 
 
         tempEnemyPrefab.transform.position = pos.position;
-        tempEnemyPrefab.GetComponent<SpriteRenderer>().sprite = enemy.monsterSprite;
+
+        tempEnemy.monsterImage.sprite = enemy.monsterSprite;
 
         tempEnemy.health = enemy.health;
         tempEnemy.attack = enemy.attack;

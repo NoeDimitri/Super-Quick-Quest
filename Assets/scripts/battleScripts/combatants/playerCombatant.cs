@@ -20,7 +20,6 @@ public class playerCombatant : combatant
 
     public Animation anim;
 
-
     [Header("Enemies")]
     public List<combatant> enemyList;
 
@@ -50,7 +49,6 @@ public class playerCombatant : combatant
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
         anim = gameObject.GetComponent<Animation>();
-
     }
 
     private void populateEnemyList()
@@ -64,6 +62,8 @@ public class playerCombatant : combatant
         battleInitialized = true;
 
     }
+
+
     private void Update()
     {
 
@@ -79,6 +79,10 @@ public class playerCombatant : combatant
                 attackMethod.performAttack(this, target);
 
                 anim.Play("playerAttack");
+
+                health -= getPoison();
+
+                addPoison(-1);
 
                 currentAtkCharge = 0;
 

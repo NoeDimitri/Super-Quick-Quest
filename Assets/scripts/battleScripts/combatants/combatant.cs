@@ -31,6 +31,8 @@ public abstract class combatant : MonoBehaviour
 
     public GameObject floatingText;
 
+    private int poisonDegree;
+
     private void Start()
     {
         currentAtkCharge = 0;
@@ -40,7 +42,20 @@ public abstract class combatant : MonoBehaviour
         activeCombat = false;
         updateStats();
 
+        poisonDegree = 0;
+
     }
+
+    public void addPoison(int amount)
+    {
+        poisonDegree = Mathf.Max(0, poisonDegree + amount);
+    }
+
+    public int getPoison()
+    {
+        return poisonDegree;
+    }
+
     private void startCombat()
     {
         activeCombat = true;

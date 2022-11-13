@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public abstract class combatant : MonoBehaviour
 {
+
+    public bool activeCombat;
+
     [Header("Stats")]
     public int health;
     public int attack;
@@ -33,24 +36,39 @@ public abstract class combatant : MonoBehaviour
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
 
+        activeCombat = false;
+
     }
 
     private void Update()
     {
 
-        currentAtkCharge += Time.deltaTime;
-        slider.value = Mathf.Min( currentAtkCharge / atkChargeMax, 1);
-        if(currentAtkCharge >= atkChargeMax)
+        if (activeCombat)
         {
+            currentAtkCharge += Time.deltaTime;
+            slider.value = Mathf.Min(currentAtkCharge / atkChargeMax, 1);
+            if (currentAtkCharge >= atkChargeMax)
+            {
 
-            attackMethod.performAttack(this, target);
+                attackMethod.performAttack(this, target);
 
-            currentAtkCharge = 0;
+                currentAtkCharge = 0;
 
+            }
+
+            updateStats();
         }
 
-        updateStats();
+    }
 
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
     }
 
     public void takeDamage(int damage)

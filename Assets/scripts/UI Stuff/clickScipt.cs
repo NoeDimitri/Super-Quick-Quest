@@ -6,11 +6,14 @@ public class clickScipt : MonoBehaviour
 {
 
     public shopScript shop;
+    public dropDown dropDown;
     private bool clickable;
+    private bool menuable;
 
     private void Start()
     {
         clickable = true;
+        menuable = true;
     }
 
     void Update()
@@ -23,14 +26,28 @@ public class clickScipt : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
             if (hit.collider != null && clickable)
             {
-                if(hit.collider.gameObject.CompareTag("shopListing"))
+                if (menuable)
                 {
-                    hit.collider.gameObject.GetComponent<shopListing>().selectListing();
-                }
+                    if (hit.collider.gameObject.CompareTag("shopListing"))
+                    {
+                        hit.collider.gameObject.GetComponent<shopListing>().selectListing();
+                    }
 
-                if (hit.collider.gameObject.CompareTag("refresh"))
+                    if (hit.collider.gameObject.CompareTag("refresh"))
+                    {
+                        shop.rerollShop();
+                    }
+
+                    if (hit.collider.gameObject.CompareTag("checkMonsters"))
+                    {
+                        dropDown.openMenu();
+                        disableMenu();
+                    }
+                }
+                else
                 {
-                    shop.rerollShop();
+                    dropDown.closeMenu();
+                    enableMenu();
                 }
             }
 
@@ -48,6 +65,16 @@ public class clickScipt : MonoBehaviour
     void disablePlay()
     {
         clickable = false;
+    }
+
+    void disableMenu()
+    {
+        menuable = false;
+    }
+
+    void enableMenu()
+    {
+        menuable = true;
     }
 
 

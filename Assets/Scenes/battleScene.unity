@@ -1186,7 +1186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &968670153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currEncounter: {fileID: 1742215955}
   currTier: 1
-  testingMode: 1
+  testingMode: 0
   savedObjects: []
 --- !u!4 &968670154
 Transform:

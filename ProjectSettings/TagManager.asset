@@ -7,6 +7,7 @@ TagManager:
   - shopListing
   - refresh
   - player
+  - checkMonsters
   layers:
   - Default
   - TransparentFX

@@ -6,8 +6,12 @@ public class weapon : equipment
 {
     public float damageMultiplier;
     public float attackSpeedGaugeMax;
+
+    public generalAttack attackMethod;
+
     private void Start()
     {
+        attackMethod = GetComponent<generalAttack>();
         ColorUtility.TryParseHtmlString("#FF6347", out associatedColor);
     }
 

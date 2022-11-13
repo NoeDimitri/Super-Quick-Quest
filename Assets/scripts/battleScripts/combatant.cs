@@ -39,11 +39,11 @@ public abstract class combatant : MonoBehaviour
     {
 
         currentAtkCharge += Time.deltaTime;
-        slider.value =Mathf.Min( currentAtkCharge / atkChargeMax, 1);
+        slider.value = Mathf.Min( currentAtkCharge / atkChargeMax, 1);
         if(currentAtkCharge >= atkChargeMax)
         {
 
-            attackMethod.performAttack(target);
+            attackMethod.performAttack(this, target);
 
             currentAtkCharge = 0;
 

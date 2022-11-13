@@ -4937,6 +4937,7 @@ MonoBehaviour:
   target: {fileID: 0}
   healthText: {fileID: 767427199792181861}
   attackText: {fileID: 767427199220504088}
+  enemySprite: {fileID: 0}
 --- !u!114 &767427199161357650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4949,7 +4950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attacker: {fileID: 0}
 --- !u!114 &767427199161357651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4962,7 +4962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 0}
 --- !u!212 &767427199161357649
 SpriteRenderer:
   m_ObjectHideFlags: 0

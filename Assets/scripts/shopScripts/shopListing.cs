@@ -28,11 +28,13 @@ public class shopListing : MonoBehaviour
     public armor currentArmor;
     public buff currentBuff;
 
-    void Start()
+    void Awake()
     {
         listingColor = GetComponent<SpriteRenderer>();
         shop = GetComponentInParent<shopScript>();
+        shop.rerollShop();
     }
+
 
     public void displayInfo()
     {

@@ -44,6 +44,8 @@ public class GameState : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
             currTier = 1;
+            currPlayerInfo.health = 10;
+            currPlayerInfo.attack = 1;
 
         }
         else if (Instance != this)

@@ -7,7 +7,7 @@ public class basicDefend : generalDefend
 
     public override void applyDefense(int amount, combatant defender, combatant attacker)
     {
-        int newAmount = amount - defender.defense;
+        int newAmount = Mathf.Max(amount - defender.defense, 0);
         defender.takeDamage(newAmount);
 
     }

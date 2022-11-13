@@ -12,8 +12,6 @@ public class playerCharacter : MonoBehaviour
     public int health;
     public int attack;
 
-    public GameState gameState;
-
     public int maxHealth;
     public int maxAttack;
     
@@ -42,16 +40,22 @@ public class playerCharacter : MonoBehaviour
         weaponText.color = weaponColor;
         armorText.color = armorColor;
 
+        health = GameState.Instance.currPlayerInfo.health;
+        attack = GameState.Instance.currPlayerInfo.attack;
+
         currentWeapon = GetComponentInChildren<weapon>();
         currentArmor = GetComponentInChildren<armor>();
 
-        maxAttack = tierToMaxAttack(GameState.Instance.getCurrTier());
-        maxHealth = tierToMaxHealth(GameState.Instance.getCurrTier());
+        if (!GameState.Instance.testingMode)
+        {
+            maxAttack = tierToMaxAttack(GameState.Instance.getCurrTier());
+            maxHealth = tierToMaxHealth(GameState.Instance.getCurrTier());
 
-        refreshStats();
+            refreshStats();
 
-        weaponPip.updatePips(currentWeapon.getLevel());
-        armorPip.updatePips(currentArmor.getLevel());
+            weaponPip.updatePips(currentWeapon.getLevel());
+            armorPip.updatePips(currentArmor.getLevel());
+        }
 
     }
 

@@ -44,6 +44,12 @@ public class GameState : MonoBehaviour
         shopTimer.timerFinished -= saveCharacter;
     }
 
+    public int getCurrTier()
+    {
+
+        return currTier;
+    }
+
 
     //We have an associated class that just stores the current player stats
     void saveCharacter()

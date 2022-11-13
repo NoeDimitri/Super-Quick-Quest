@@ -48,7 +48,7 @@ public abstract class combatant : MonoBehaviour
 
     public void addPoison(int amount)
     {
-        poisonDegree = Mathf.Min(0, poisonDegree + amount);
+        poisonDegree = Mathf.Max(0, poisonDegree + amount);
     }
 
     public int getPoison()

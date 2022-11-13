@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currEncounter: {fileID: 1742215955}
   currTier: 1
-  testingMode: 1
+  testingMode: 0
   savedObjects: []
 --- !u!4 &968670154
 Transform:

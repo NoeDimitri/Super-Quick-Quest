@@ -72,7 +72,7 @@ public class playerCharacter : MonoBehaviour
 
     public int tierToMaxAttack(int tier)
     {
-        return 10 + tier * 20;
+        return 10 + tier * 10;
     }
 
     public void refreshStats()

@@ -29,10 +29,13 @@ public class beserkersHelm : generalDefend
         }
 
     }
-
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
+        if(GameObject.FindGameObjectWithTag("player") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
+
+        }
     }
 
     public override void applyDefense(int amount, combatant defender, combatant attacker)

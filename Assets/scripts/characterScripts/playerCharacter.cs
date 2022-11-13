@@ -105,8 +105,8 @@ public class playerCharacter : MonoBehaviour
 
         else
         {
-
-            currentWeapon.clone(newWeapon);
+            currentWeapon = newWeapon;
+            currentWeapon.itemExperience = 1;
             weaponPip.updatePips(currentWeapon.getLevel());
 
         }
@@ -128,7 +128,8 @@ public class playerCharacter : MonoBehaviour
         else
         {
             //Copy over armor
-            currentArmor.clone(newArmor);
+            currentArmor = newArmor;
+            currentArmor.itemExperience = 1;
             armorPip.updatePips(currentArmor.getLevel());
 
         }

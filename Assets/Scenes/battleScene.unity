@@ -1943,6 +1943,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3667779386021579453, guid: 6ac167098859e6e4795905f1233a1f05, type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 733354946189752298, guid: 6568259ae0e952349983f5d47dc8655d, type: 3}
+    - target: {fileID: 3667779386021579453, guid: 6ac167098859e6e4795905f1233a1f05, type: 3}
       propertyPath: attackMethod
       value: 
       objectReference: {fileID: 55279588}
@@ -2011,6 +2015,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsters:
   - {fileID: 1358870057}
+  - {fileID: 1506973702}
+  - {fileID: 1208029789}
   tier: 1
 --- !u!4 &1742215956
 Transform:

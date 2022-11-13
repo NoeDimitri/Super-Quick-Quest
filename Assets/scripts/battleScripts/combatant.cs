@@ -15,7 +15,7 @@ public abstract class combatant : MonoBehaviour
     public float atkChargeMax;
     public int defense;
 
-    protected float currentAtkCharge;
+    public float currentAtkCharge;
 
     protected Slider slider;
     public ParticleSystem particles;

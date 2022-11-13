@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  attack: 10
+  attack: 32
   maxHealth: 0
   maxAttack: 0
   currentWeapon: {fileID: 430372702}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 430372702}
   - component: {fileID: 430372703}
   m_Layer: 0
-  m_Name: testWeapon
+  m_Name: testWeapon2
   m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b019e691475db34eb1011ddfe7a17fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 0
   selfDamagePercent: 0.15
 --- !u!1 &480185060
 GameObject:
@@ -552,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopPlayer: {fileID: 0}
+  transitioner: {fileID: 0}
 --- !u!4 &480185062
 Transform:
   m_ObjectHideFlags: 0
@@ -1790,6 +1792,10 @@ PrefabInstance:
       propertyPath: attackMethod
       value: 
       objectReference: {fileID: 55279588}
+    - target: {fileID: 3667779386021579453, guid: 6ac167098859e6e4795905f1233a1f05, type: 3}
+      propertyPath: currentAtkCharge
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3667779386021579455, guid: 6ac167098859e6e4795905f1233a1f05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ac167098859e6e4795905f1233a1f05, type: 3}

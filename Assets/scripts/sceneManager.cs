@@ -36,7 +36,8 @@ public class sceneManager : MonoBehaviour
     {
         deleteTrash();
 
-        Destroy(GameState.Instance);
+        Destroy(GameState.Instance.gameObject);
+
         SceneManager.LoadScene("gameOver");
 
     }

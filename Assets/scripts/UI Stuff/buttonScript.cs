@@ -17,7 +17,6 @@ public class buttonScript : MonoBehaviour
 
     void loadStart()
     {
-
         SceneManager.LoadScene("shopScene");
 
     }

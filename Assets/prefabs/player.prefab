@@ -5413,6 +5413,7 @@ GameObject:
   - component: {fileID: 3667779386021579453}
   - component: {fileID: 3667779386021579454}
   - component: {fileID: 8753997552943963453}
+  - component: {fileID: 1990141056154962812}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -5456,6 +5457,7 @@ MonoBehaviour:
   attack: 7
   atkChargeMax: 2
   defense: 2
+  currentAtkCharge: 0
   particles: {fileID: 0}
   attackMethod: {fileID: 8753997552943963453}
   defendMethod: {fileID: 3667779386021579454}
@@ -5465,6 +5467,7 @@ MonoBehaviour:
   equippedWeapon: {fileID: 0}
   equippedArmor: {fileID: 0}
   damageText: {fileID: 733354946189752298, guid: 6568259ae0e952349983f5d47dc8655d, type: 3}
+  anim: {fileID: 0}
   enemyList: []
   enemiesDefeated: 0
   battleInitialized: 0
@@ -5492,6 +5495,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &1990141056154962812
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667779386021579425}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 584a89c3310d373408750c7ad9a775b8, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 584a89c3310d373408750c7ad9a775b8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &3667779386445735951
 GameObject:
   m_ObjectHideFlags: 0

@@ -1354,7 +1354,7 @@ MonoBehaviour:
     but is hard to hit and deals damage when it dies.
   health: 30
   attack: 2
-  atkChargeMax: 0.75
+  atkChargeMax: 1.2
   defense: 0
   attackMethod: {fileID: 292081503}
   defendMethod: {fileID: 292081502}

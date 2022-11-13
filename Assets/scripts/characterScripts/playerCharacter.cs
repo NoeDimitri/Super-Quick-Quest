@@ -32,6 +32,7 @@ public class playerCharacter : MonoBehaviour
     public levelPips weaponPip;
     public levelPips armorPip;
 
+
     void Start()
     {
         Color weaponColor, armorColor;

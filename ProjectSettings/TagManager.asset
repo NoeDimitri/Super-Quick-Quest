@@ -15,6 +15,7 @@ TagManager:
   - armor
   - pips
   - transitionScreen
+  - musicPlayer
   layers:
   - Default
   - TransparentFX

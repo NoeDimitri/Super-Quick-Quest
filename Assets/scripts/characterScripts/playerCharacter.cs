@@ -22,7 +22,10 @@ public class playerCharacter : MonoBehaviour
 
     [Header("Info Refs")]
     public TMP_Text healthText;
+    public TMP_Text healthMax;
+
     public TMP_Text atkText;
+    public TMP_Text atkMax;
 
     public TMP_Text weaponText;
     public TMP_Text armorText;
@@ -75,12 +78,15 @@ public class playerCharacter : MonoBehaviour
     {
 
         healthText.text = "Health: " + health;
+        healthMax.text = "Max Health: " + maxHealth;
         atkText.text = "Attack: " + attack;
+        atkMax.text = "Max Attack: " + maxAttack;
 
         weaponText.text = currentWeapon.upgradeName;
         weaponImage.sprite = currentWeapon.upgradeSprite;
         armorText.text = currentArmor.upgradeName;
         armorImage.sprite = currentArmor.upgradeSprite;
+
 
 
     }

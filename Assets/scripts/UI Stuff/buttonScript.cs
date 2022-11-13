@@ -17,6 +17,7 @@ public class buttonScript : MonoBehaviour
 
     void loadStart()
     {
+        destroyAudio();
         SceneManager.LoadScene("shopScene");
 
     }
@@ -25,5 +26,13 @@ public class buttonScript : MonoBehaviour
     {
         Application.Quit();
     }
+    void destroyAudio()
+    {
+        if (GameObject.FindGameObjectWithTag("musicPlayer") != null)
+        {
 
+            Destroy(GameObject.FindGameObjectWithTag("musicPlayer"));
+
+        }
+    }
 }

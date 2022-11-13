@@ -32,6 +32,8 @@ public class enemyCombatant : combatant
         }
 
         health -= damage;
+
+        Debug.Log("yeah");
         particles.Play();
 
         GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);

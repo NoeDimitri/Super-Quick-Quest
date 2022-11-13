@@ -57,9 +57,9 @@ public abstract class combatant : MonoBehaviour
 
             }
 
-            updateStats();
+            
         }
-
+        updateStats();
     }
 
     private void startCombat()

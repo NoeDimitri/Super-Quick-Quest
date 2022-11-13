@@ -7,6 +7,8 @@ public class upgrades : MonoBehaviour
     [Header("Info")]
     public string penalty;
     public string upgradeName;
+
+    [TextArea(8, 15)]
     public string upgradeDescription;
     public Sprite upgradeSprite;
     protected Color associatedColor;

@@ -4,14 +4,12 @@ using UnityEngine;
 
 public abstract class generalDefend : MonoBehaviour
 {
-    [HideInInspector]
-    public combatant defender;
+
     private void Start()
     {
-        defender = GetComponent<combatant>();
 
     }
 
-    public abstract void applyDefense(int amount, combatant attacker);
+    public abstract void applyDefense(int amount, combatant defender, combatant attacker);
     
 }

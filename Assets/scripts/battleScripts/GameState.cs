@@ -15,10 +15,10 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currTier = 1;
         currPlayerInfo = GetComponent<playerInfo>();
         shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
         //if instance is null;
-        currTier = 1;
     }
 
     private void OnEnable()
@@ -33,6 +33,11 @@ public class GameState : MonoBehaviour
     void saveCharacter()
     {
         currPlayerInfo.clone(shoppingChar);
+    }
+
+    public int getCurrTier()
+    {
+        return currTier;
     }
 
 

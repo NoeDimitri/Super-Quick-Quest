@@ -6,15 +6,18 @@ using TMPro;
 public class playerCharacter : MonoBehaviour
 {
     // Start is called before the first frame update
-    public enum stats {hp, atk, spd, def };
+    public enum stats {hp, atk};
 
 
     [Header("Player Stats")]
     public int health;
     public int attack;
-    public int defense;
-    public float speed;
 
+    public GameState gameState;
+
+    public int maxHealth;
+    public int maxAttack;
+    
     [Header("Equipment")]
     public weapon currentWeapon;
     public armor currentArmor;
@@ -22,7 +25,6 @@ public class playerCharacter : MonoBehaviour
     [Header("Info Refs")]
     public TMP_Text healthText;
     public TMP_Text atkText;
-    public TMP_Text spdText;
 
     public TMP_Text weaponText;
     public TMP_Text armorText;
@@ -44,7 +46,20 @@ public class playerCharacter : MonoBehaviour
         currentWeapon = GetComponentInChildren<weapon>();
         currentArmor = GetComponentInChildren<armor>();
 
+        maxAttack = tierToMaxAttack(gameState.getCurrTier());
+        maxHealth = tierToMaxHealth(gameState.getCurrTier());
+
         refreshStats();
+    }
+
+    public int tierToMaxHealth(int tier)
+    {
+        return 10 + tier * 20;
+    }
+
+    public int tierToMaxAttack(int tier)
+    {
+        return 10 + tier * 20;
     }
 
     public void refreshStats()
@@ -52,7 +67,6 @@ public class playerCharacter : MonoBehaviour
 
         healthText.text = "Health: " + health;
         atkText.text = "Attack: " + attack;
-        spdText.text = "Speed: " + speed;
 
         weaponText.text = currentWeapon.upgradeName;
         weaponImage.sprite = currentWeapon.upgradeSprite;
@@ -113,39 +127,26 @@ public class playerCharacter : MonoBehaviour
             case stats.atk:
                 if (newBuff.isSuperBuff)
                 {
-                    attack = Mathf.CeilToInt(attack * newBuff.multiplier);
+                    attack = Mathf.CeilToInt(Mathf.Min(maxAttack, attack * newBuff.multiplier));
                    
                 }
                 else
                 {
-                    attack += newBuff.statDif;
+                    attack = Mathf.Min(attack + newBuff.statDif, maxAttack);
                 }
                 break;
 
             case stats.hp:
                 if (newBuff.isSuperBuff)
                 {
-                    health = Mathf.CeilToInt(health * newBuff.multiplier);
+                    health = Mathf.CeilToInt(Mathf.Min(maxAttack, health * newBuff.multiplier));
 
                 }
                 else
                 {
-                    health += newBuff.statDif;
+                    health = Mathf.Min(health + newBuff.statDif, maxHealth);
                 }
                 break;
-
-            case stats.spd:
-                if (newBuff.isSuperBuff)
-                {
-                    speed = Mathf.CeilToInt(speed * newBuff.multiplier);
-
-                }
-                else
-                {
-                    speed += newBuff.statDif;
-                }
-                break;
-
         }
 
         refreshStats();
@@ -162,11 +163,6 @@ public class playerCharacter : MonoBehaviour
             case stats.hp:
                 health = Mathf.Max(1, health - newBuff.statDif);
                 break;
-
-            case stats.spd:
-                speed = Mathf.Max(1, speed - newBuff.statDif);
-                break;
-
         }
 
         refreshStats();

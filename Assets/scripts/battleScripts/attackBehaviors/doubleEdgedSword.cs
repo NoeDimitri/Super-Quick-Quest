@@ -16,8 +16,6 @@ public class doubleEdgedSword : generalAttack
 
         int newAttackDamage = attacker.attack * damageMultiplier;
 
-        Debug.Log(Mathf.CeilToInt(attacker.attack * selfDamagePercent));
-
         attacker.takeDamage(Mathf.CeilToInt(attacker.attack * selfDamagePercent));
 
         target.defendMethod.applyDefense(newAttackDamage, target, attacker);

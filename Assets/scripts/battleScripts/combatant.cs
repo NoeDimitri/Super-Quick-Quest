@@ -37,6 +37,7 @@ public abstract class combatant : MonoBehaviour
         particles = GetComponentInChildren<ParticleSystem>();
 
         activeCombat = false;
+        updateStats();
 
     }
 

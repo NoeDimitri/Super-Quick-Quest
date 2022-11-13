@@ -5,7 +5,7 @@ using UnityEngine;
 public class basicDefend : generalDefend
 {
 
-    public override void applyDefense(int amount, combatant defender, combatant attacker)
+    public override void applyDefense(int amount, combatant attacker)
     {
         int newAmount = amount - defender.defense;
         defender.takeDamage(newAmount);

@@ -7,8 +7,7 @@ TagManager:
   - shopListing
   - refresh
   - player
-  - enemy
-  - spawnLocation
+  - checkMonsters
   layers:
   - Default
   - TransparentFX

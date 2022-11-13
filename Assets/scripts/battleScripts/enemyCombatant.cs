@@ -8,9 +8,6 @@ public class enemyCombatant : combatant
 {
     //so i can remove stuff properly
     playerCombatant playerObj;
-
-    public Sprite enemySprite;
-
     void Start()
     {
         //I will only try to hit the player

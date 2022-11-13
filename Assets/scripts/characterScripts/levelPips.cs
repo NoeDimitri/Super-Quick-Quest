@@ -26,11 +26,11 @@ public class levelPips : MonoBehaviour
     {
         if (isWeapon)
         {
-            updatePips(GameState.Instance.currPlayerInfo.currWeapon.getLevel());
+            updatePips(level);
         }
         else
         {
-            updatePips(GameState.Instance.currPlayerInfo.currArmor.getLevel());
+            updatePips(level);
         }
 
     }

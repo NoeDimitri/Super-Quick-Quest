@@ -44,13 +44,14 @@ public class sceneManager : MonoBehaviour
 
         Destroy(GameState.Instance.gameObject);
 
+        destroyAudio();
+
         SceneManager.LoadScene("gameOver");
 
     }
 
     void loadShopScene()
     {
-
 
         GameState.Instance.currTier++;
 
@@ -60,7 +61,17 @@ public class sceneManager : MonoBehaviour
 
 
     }
+    
 
+    void destroyAudio()
+    {
+        if (GameObject.FindGameObjectWithTag("musicPlayer") != null)
+        {
+
+            Destroy(GameObject.FindGameObjectWithTag("musicPlayer"));
+
+        }
+    }
     void deleteTrash()
     {
         foreach (GameObject obj in GameState.Instance.savedObjects)

@@ -25,17 +25,13 @@ public class buff : upgrades
     public Dictionary<int, playerCharacter.stats> numToStat = new Dictionary<int, playerCharacter.stats>
     {
         [0] = playerCharacter.stats.hp,
-        [1] = playerCharacter.stats.atk,
-        [2] = playerCharacter.stats.spd,
-        [3] = playerCharacter.stats.def
+        [1] = playerCharacter.stats.atk
     };
 
     public Dictionary<playerCharacter.stats, string> statToString = new Dictionary<playerCharacter.stats, string>
     {
         [playerCharacter.stats.hp] = "Health",
-        [playerCharacter.stats.atk] = "Attack",
-        [playerCharacter.stats.spd] = "Speed",
-        [playerCharacter.stats.def] = "Defense"
+        [playerCharacter.stats.atk] = "Attack"
 
     };
 
@@ -77,12 +73,12 @@ public class buff : upgrades
         statDif = Random.Range(1, 4);
 
         
-        int statChoice = Random.Range(0, 3);
-        int statChoice2 = Random.Range(0, 3);
+        int statChoice = Random.Range(0, 2);
+        int statChoice2 = Random.Range(0, 2);
 
         while(statChoice2 == statChoice)
         {
-            statChoice2 = Random.Range(0, 3);
+            statChoice2 = Random.Range(0, 2);
         }
 
         mainStat = numToStat[statChoice];

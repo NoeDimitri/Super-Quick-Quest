@@ -15,6 +15,8 @@ public class shopTimer : MonoBehaviour
     public float maxTime;
     private float timeRemaining;
 
+    public bool timerStartedBool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,25 +25,45 @@ public class shopTimer : MonoBehaviour
         slider.value = 1;
         timeRemaining = maxTime;
 
+        timerStartedBool = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeRemaining -= Time.deltaTime;
 
-        updateSlider(timeRemaining);
-
-        if(timeRemaining <= 0)
+        if (timerStartedBool)
         {
-            if(timerFinished != null)
+            timeRemaining -= Time.deltaTime;
+
+            updateSlider(timeRemaining);
+
+            if (timeRemaining <= 0)
             {
-                timerFinished();
+                if (timerFinished != null)
+                {
+                    timerFinished();
+                }
+
             }
-
         }
-
     }
+
+    private void OnEnable()
+    {
+        dropDown.timerStarted += startTimer;
+    }
+    private void OnDisable()
+    {
+        dropDown.timerStarted -= startTimer;
+    }
+
+    void startTimer()
+    {
+        timerStartedBool = true;
+    }
+
 
     private void updateSlider(float currentTime)
     {

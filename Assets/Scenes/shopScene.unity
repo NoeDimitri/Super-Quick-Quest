@@ -5473,6 +5473,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 953496515}
+  - {fileID: 1020581241}
   m_Father: {fileID: 460531501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5774,7 +5775,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2488551215936303044, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
   m_PrefabInstance: {fileID: 1616595183}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1616595184}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17f28cc242d14b743bea19ec30d85967, type: 3}
@@ -6002,6 +6003,10 @@ PrefabInstance:
     - target: {fileID: 2488551215936303042, guid: 50e8710403370e5489f6bb069a526761, type: 3}
       propertyPath: m_Name
       value: Gamer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488551215936303044, guid: 50e8710403370e5489f6bb069a526761, type: 3}
+      propertyPath: atkChargeMax
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2488551215936303045, guid: 50e8710403370e5489f6bb069a526761, type: 3}
       propertyPath: m_RootOrder
@@ -10450,6 +10455,10 @@ PrefabInstance:
       propertyPath: atkChargeMax
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2488551215936303044, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
+      propertyPath: attackMethod
+      value: 
+      objectReference: {fileID: 1616595185}
     - target: {fileID: 2488551215936303045, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -10494,8 +10503,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2488551215936303046, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
+--- !u!1 &1616595184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2488551215936303042, guid: a09e2bb07e41b7a48893a1b27d10fa2b, type: 3}
+  m_PrefabInstance: {fileID: 1616595183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1616595185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616595184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: febc3257d03efc7428661cddce83969c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620198375
 GameObject:
   m_ObjectHideFlags: 0

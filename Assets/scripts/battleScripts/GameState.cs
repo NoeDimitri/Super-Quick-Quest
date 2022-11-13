@@ -19,8 +19,6 @@ public class GameState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         if(GameObject.FindGameObjectWithTag("Player") != null)
         {
             shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();

@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309167810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.238633, y: 0.46023488, z: -0.018676639}
+  m_LocalPosition: {x: 16.12, y: 10.99, z: -0.018676639}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430372701}
   - component: {fileID: 430372702}
+  - component: {fileID: 430372703}
   m_Layer: 0
   m_Name: testWeapon
   m_TagString: weapon
@@ -250,8 +251,21 @@ MonoBehaviour:
   upgradeSprite: {fileID: 21300000, guid: e44e1399d4ea2cc4aa3a213ec210d601, type: 3}
   upgraded: 0
   damageMultiplier: 1
-  attackSpeedGaugeMax: 5
+  attackSpeedGaugeMax: 1
   attackMethod: {fileID: 0}
+--- !u!114 &430372703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430372700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b019e691475db34eb1011ddfe7a17fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfDamagePercent: 0.15
 --- !u!1 &480185060
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1142693333
 Transform:
   m_ObjectHideFlags: 0
@@ -819,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  attack: 8
+  attack: 0
   atkChargeMax: 3
   defense: 0
   attackMethod: {fileID: 1208029788}
@@ -963,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  attack: 6
+  attack: 0
   atkChargeMax: 2
   defense: 0
   attackMethod: {fileID: 1506973704}
@@ -1293,7 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c527b153e6b2934ab4292c8efdf3749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameState: {fileID: 968670153}
   enemyPrefab: {fileID: 767427199161357655, guid: d1d96cd2f732f81489e86ba59dab77d8, type: 3}
   enemyFolder: {fileID: 1726478809}
   spawnLocations: []

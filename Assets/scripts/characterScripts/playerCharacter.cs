@@ -45,8 +45,8 @@ public class playerCharacter : MonoBehaviour
         currentWeapon = GetComponentInChildren<weapon>();
         currentArmor = GetComponentInChildren<armor>();
 
-        maxAttack = tierToMaxAttack(gameState.getCurrTier());
-        maxHealth = tierToMaxHealth(gameState.getCurrTier());
+        maxAttack = tierToMaxAttack(GameState.Instance.getCurrTier());
+        maxHealth = tierToMaxHealth(GameState.Instance.getCurrTier());
 
         refreshStats();
 

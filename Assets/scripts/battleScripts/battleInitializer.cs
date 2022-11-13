@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class battleInitializer : MonoBehaviour
 {
-
-    public GameState currentGameState;
     //Related to 
     public GameObject enemyPrefab;
     public Transform enemyFolder;
@@ -30,9 +28,10 @@ public class battleInitializer : MonoBehaviour
         //Duplicates over player stats
         copyPlayerStats();
 
+
         int i = 0;
 
-        foreach(monsterInfo monInfo in currentGameState.currEncounter.monsters)
+        foreach(monsterInfo monInfo in GameState.Instance.currEncounter.monsters)
         {
 
             createEnemy(monInfo, spawnLocations[i++]);
@@ -56,6 +55,7 @@ public class battleInitializer : MonoBehaviour
         currentPlayer.attack = GameState.Instance.currPlayerInfo.attack;
         currentPlayer.equippedArmor = GameState.Instance.currPlayerInfo.currArmor;
         currentPlayer.equippedWeapon = GameState.Instance.currPlayerInfo.currWeapon;
+        currentPlayer.atkChargeMax = currentPlayer.equippedWeapon.attackSpeedGaugeMax;
     }
 
     void createEnemy(monsterInfo enemy, Transform pos)

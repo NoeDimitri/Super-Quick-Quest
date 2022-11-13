@@ -26,9 +26,15 @@ public class enemyCombatant : combatant
     }
     public override void takeDamage(int damage)
     {
+        GameObject damageNums;
+
         if (damage <= 0)
         {
+            damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+            damageNums.GetComponentInChildren<TextMesh>().color = Color.blue;
+            damageNums.GetComponentInChildren<TextMesh>().text = "blocked!";
             return;
+
         }
 
         health -= damage;
@@ -36,7 +42,7 @@ public class enemyCombatant : combatant
         Debug.Log("yeah");
         particles.Play();
 
-        GameObject damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
+        damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
         damageNums.GetComponentInChildren<TextMesh>().text = "-" + damage;
 
         if (health <= 0)

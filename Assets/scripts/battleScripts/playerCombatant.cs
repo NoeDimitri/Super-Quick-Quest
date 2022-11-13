@@ -19,6 +19,8 @@ public class playerCombatant : combatant
     public static event playerHitFunctions playerHit;
     public GameObject damageText;
 
+    public Animation anim;
+
 
     [Header("Enemies")]
     public List<combatant> enemyList;
@@ -48,6 +50,7 @@ public class playerCombatant : combatant
         currentAtkCharge = 0;
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
+        anim = gameObject.GetComponent<Animation>();
 
     }
 
@@ -55,6 +58,7 @@ public class playerCombatant : combatant
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
         {
+
             enemyList.Add(enemy.GetComponent<combatant>());
         }
 
@@ -74,6 +78,8 @@ public class playerCombatant : combatant
                 target = enemyList[Random.Range(0, enemyList.Count)];
 
                 attackMethod.performAttack(this, target);
+
+                anim.Play("playerAttack");
 
                 currentAtkCharge = 0;
 

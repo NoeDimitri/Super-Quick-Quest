@@ -8,6 +8,7 @@ public class enemyCombatant : combatant
 {
     //so i can remove stuff properly
     playerCombatant playerObj;
+    private Animation anim;
 
     public Sprite enemySprite;
     public Image monsterImage;
@@ -22,6 +23,9 @@ public class enemyCombatant : combatant
         currentAtkCharge = Random.Range(0f, 0.25f) * atkChargeMax;
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
+        anim = gameObject.GetComponent<Animation>();
+        anim["death"].layer = 5;
+
 
     }
     public override void takeDamage(int damage)
@@ -38,8 +42,7 @@ public class enemyCombatant : combatant
         }
 
         health -= damage;
-
-        Debug.Log("yeah");
+        
         particles.Play();
 
         damageNums = Instantiate(damageText, transform.position, Quaternion.identity);
@@ -52,9 +55,35 @@ public class enemyCombatant : combatant
 
 
     }
+
+    private void Update()
+    {
+
+        if (activeCombat)
+        {
+            currentAtkCharge += Time.deltaTime;
+            slider.value = Mathf.Min(currentAtkCharge / atkChargeMax, 1);
+            if (currentAtkCharge >= atkChargeMax)
+            {
+
+                attackMethod.performAttack(this, target);
+                anim.Play("enemyAttack");
+                currentAtkCharge = 0;
+
+            }
+
+        }
+        updateStats();
+
+    }
+
     protected override void death()
     {
+
+        anim.Play("death");
+        anim.Stop();
         playerObj.removeEnemy(this);
+
 
         Destroy(gameObject, 1f);
 

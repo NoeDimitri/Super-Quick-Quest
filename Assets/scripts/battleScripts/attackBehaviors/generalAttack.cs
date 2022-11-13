@@ -4,6 +4,14 @@ using UnityEngine;
 
 public abstract class generalAttack : MonoBehaviour
 {
-    public abstract void performAttack(combatant attacker, combatant target);
+    [HideInInspector]
+    public combatant attacker;
+
+    private void Start()
+    {
+        attacker = GetComponent<combatant>();
+    }
+
+    public abstract void performAttack(combatant target);
 
 }

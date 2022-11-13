@@ -7,8 +7,8 @@ public class GameState : MonoBehaviour
 
     public encounter currEncounter;
 
-    public playerInfo currPlayerInfo;
-    private playerCharacter shoppingChar;
+    private playerInfo currPlayerInfo;
+    public playerCharacter shoppingChar;
 
     public int currTier;
 
@@ -16,11 +16,7 @@ public class GameState : MonoBehaviour
     void Start()
     {
         currPlayerInfo = GetComponent<playerInfo>();
-        if(GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
-        }
-
+        shoppingChar = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
         //if instance is null;
         currTier = 1;
     }
@@ -34,21 +30,9 @@ public class GameState : MonoBehaviour
         shopTimer.timerFinished -= saveCharacter;
     }
 
-
-    //We have an associated class that just stores the current player stats
     void saveCharacter()
     {
         currPlayerInfo.clone(shoppingChar);
-    }
-
-    public void copyPlayerCombat(playerCombatant player)
-    {
-
-        player.health = currPlayerInfo.health;
-        player.attack = currPlayerInfo.attack;
-        player.equippedArmor = currPlayerInfo.currArmor;
-        player.equippedWeapon = currPlayerInfo.currWeapon;
-
     }
 
 

@@ -10,19 +10,12 @@ public class playerCombatant : combatant
     public armor equippedArmor;
 
     [Header("Enemies")]
+    public GameObject enemyContainer;
     public List<combatant> enemyList;
 
-    public bool enemiesDefeated, battleInitialized = false;
+    public bool enemiesDefeated;
 
-    private void OnEnable()
-    {
-        battleInitializer.finishedInitialization += populateEnemyList;
-    }
 
-    private void OnDisable()
-    {
-        battleInitializer.finishedInitialization += populateEnemyList;
-    }
     private void Start()
     {
         enemiesDefeated = false;
@@ -30,16 +23,10 @@ public class playerCombatant : combatant
         slider = GetComponentInChildren<Slider>();
         particles = GetComponentInChildren<ParticleSystem>();
 
-    }
-
-    private void populateEnemyList()
-    {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
+        foreach(GameObject enemy in GameObject.FindGameObjectsWithTag("enemy"))
         {
             enemyList.Add(enemy.GetComponent<combatant>());
         }
-
-        battleInitialized = true;
 
     }
     private void Update()
@@ -48,11 +35,11 @@ public class playerCombatant : combatant
         currentAtkCharge += Time.deltaTime;
         slider.value = Mathf.Min(currentAtkCharge / atkChargeMax, 1);
 
-        if (currentAtkCharge >= atkChargeMax && !enemiesDefeated && battleInitialized)
+        if (currentAtkCharge >= atkChargeMax && !enemiesDefeated)
         {
             target = enemyList[Random.Range(0, enemyList.Count)];
 
-            attackMethod.performAttack(this, target);
+            attackMethod.performAttack(target);
 
             currentAtkCharge = 0;
 

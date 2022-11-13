@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class basicAttack : generalAttack
 {
-    public override void performAttack(combatant attacker, combatant target)
+    public override void performAttack(combatant target)
     {
 
-        target.defendMethod.applyDefense(attacker.attack, target, attacker);
+        target.defendMethod.applyDefense(attacker.attack, attacker);
 
     }
 }

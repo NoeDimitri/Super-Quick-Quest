@@ -5281,7 +5281,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -13.321547, y: 0, z: -13.509163, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -5339,7 +5339,7 @@ GameObject:
   - component: {fileID: 3667779386021579426}
   - component: {fileID: 3667779386021579453}
   - component: {fileID: 3667779386021579454}
-  - component: {fileID: 8753997552943963453}
+  - component: {fileID: 3667779386021579455}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -5435,16 +5435,16 @@ MonoBehaviour:
   atkChargeMax: 2
   defense: 2
   particles: {fileID: 0}
-  attackMethod: {fileID: 8753997552943963453}
+  attackMethod: {fileID: 3667779386021579455}
   defendMethod: {fileID: 3667779386021579454}
   target: {fileID: 0}
   healthText: {fileID: 3667779386625204594}
   attackText: {fileID: 3667779385508045226}
   equippedWeapon: {fileID: 0}
   equippedArmor: {fileID: 0}
+  enemyContainer: {fileID: 0}
   enemyList: []
   enemiesDefeated: 0
-  battleInitialized: 0
 --- !u!114 &3667779386021579454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5457,7 +5457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 524a2218ff60ef1479cfe273d7f7a757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8753997552943963453
+  defender: {fileID: 0}
+--- !u!114 &3667779386021579455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5466,9 +5467,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3667779386021579425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c4380c75ddbf614ba54a002b0957f7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 92a9439a4a72b0c4990d68de6c13b919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attacker: {fileID: 0}
 --- !u!1 &3667779386445735951
 GameObject:
   m_ObjectHideFlags: 0

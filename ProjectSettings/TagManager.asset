@@ -14,6 +14,7 @@ TagManager:
   - weapon
   - armor
   - pips
+  - transitionScreen
   layers:
   - Default
   - TransparentFX

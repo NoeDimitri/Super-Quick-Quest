@@ -7,6 +7,7 @@ public class sceneManager : MonoBehaviour
 {
 
     public playerCharacter shopPlayer;
+    public GameObject transitioner;
 
     private void Start()
     {
@@ -15,17 +16,22 @@ public class sceneManager : MonoBehaviour
             shopPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<playerCharacter>();
 
         }
+
+        if (GameObject.FindGameObjectWithTag("transitionScreen"))
+        {
+            transitioner = GameObject.FindGameObjectWithTag("transitionScreen");
+        }
     }
 
     private void OnEnable()
     {
-        shopTimer.timerFinished += loadBattleScene;
+        endTransition.transitionFinished += loadBattleScene;
         playerCombatant.battleWon += loadShopScene;
         playerCombatant.gameOver += loadGameOver;
     }
     private void OnDisable()
     {
-        shopTimer.timerFinished -= loadBattleScene;
+        endTransition.transitionFinished -= loadBattleScene;
         playerCombatant.battleWon -= loadShopScene;
         playerCombatant.gameOver -= loadGameOver;
 
@@ -73,6 +79,9 @@ public class sceneManager : MonoBehaviour
         GameState.Instance.savedObjects.Add(shopPlayer.currentArmor.gameObject);
         shopPlayer.currentArmor.gameObject.transform.SetParent(null);
         DontDestroyOnLoad(shopPlayer.currentArmor);
+
+        GameState.Instance.savedObjects.Add(transitioner);
+        DontDestroyOnLoad(transitioner);
 
         GameState.Instance.savedObjects.Add(shopPlayer.currentWeapon.gameObject);
         shopPlayer.currentWeapon.gameObject.transform.SetParent(null);

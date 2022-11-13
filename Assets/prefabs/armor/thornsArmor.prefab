@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penalty: 
   upgradeName: Armor of Thorns
-  upgradeDescription: Reflects back damage dealt to user
+  upgradeDescription: Reflects inflicted damage back to attacker
   upgradeSprite: {fileID: 21300000, guid: ac95f20f46e30844bb06163887fd78e2, type: 3}
   itemExperience: 1
   upgraded: 0

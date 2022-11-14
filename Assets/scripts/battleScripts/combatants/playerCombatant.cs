@@ -80,7 +80,7 @@ public class playerCombatant : combatant
 
                 anim.Play("playerAttack");
 
-                health -= getPoison();
+                takeDamage(getPoison());
 
                 addPoison(-1);
 

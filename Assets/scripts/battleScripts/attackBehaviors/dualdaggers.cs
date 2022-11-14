@@ -19,22 +19,28 @@ public class dualdaggers : generalAttack
     private void OnEnable()
     {
         playerCombatant.playerHit += resetAtkInc;
+        startBattle.finishedStart += findPlayer;
     }
 
     private void OnDisable()
     {
         playerCombatant.playerHit -= resetAtkInc;
+        startBattle.finishedStart -= findPlayer;
+
 
     }
 
+    private void findPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
+
+    }
     private void resetAtkInc()
     {
         //reset attack and reset attack speed
         player.attack -= tempAtkGain;
         player.atkChargeMax = GameState.Instance.currPlayerInfo.currWeapon.attackSpeedGaugeMax;
         tempAtkGain = 0;
-
-
 
     }
     public void Start()

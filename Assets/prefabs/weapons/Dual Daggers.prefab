@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0cd6473d85ad04f845e60c7ecfaca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penalty: has reduced atk scaling
+  penalty: 
   upgradeName: Dualing Daggers
   upgradeDescription: Consecutive hits without taking damage increases attack. Attacks
     quick, but scales less off damage.

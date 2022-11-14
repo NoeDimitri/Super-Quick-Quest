@@ -11,7 +11,7 @@ public class critSword : generalAttack
         float finalCritChance;
         float finalCritMultiplier;
 
-        if (GameState.Instance.upgradedArmor())
+        if (GameState.Instance.upgradedWeapon())
         {
             finalCritChance = critChanceEmpowered;
             finalCritMultiplier = critMultiplierEmpowered;

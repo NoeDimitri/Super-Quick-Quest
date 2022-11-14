@@ -19,6 +19,8 @@ public class beserkersHelm : generalDefend
 
     private void boostDamage()
     {
+        player = GameObject.FindGameObjectWithTag("player").GetComponent<playerCombatant>();
+
         if (GameState.Instance.upgradedArmor())
         {
             player.attack += upgradedAtkGain;

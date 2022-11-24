@@ -15,11 +15,11 @@ public class ninjaMask : generalDefend
         int currentDodgeChance;
         if(GameState.Instance.currPlayerInfo.currArmor.upgraded)
         {
-            currentDodgeChance = dodgeChance;
+            currentDodgeChance = dodgeChanceUpgraded;
         }
         else
         {
-            currentDodgeChance = dodgeChanceUpgraded;
+            currentDodgeChance = dodgeChance;
         }
 
         if(Random.Range(0, 100) < currentDodgeChance)
